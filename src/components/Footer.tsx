@@ -7,10 +7,10 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Logo and description */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-primary">OphtalmoCare</h3>
+            <h3 className="text-2xl font-bold text-primary">Dr Kenza Tazi</h3>
             <p className="text-sm text-muted-foreground">
-              Cabinet d'ophtalmologie moderne dédié à la préservation de votre vision 
-              avec les technologies les plus avancées.
+              Cabinet d'ophtalmologie spécialisé en chirurgie et soins oculaires.
+              Excellence et technologie de pointe à votre service.
             </p>
             <div className="flex gap-4">
               <a
@@ -102,10 +102,20 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>123 Avenue de la Santé</li>
-              <li>75001 Paris, France</li>
-              <li className="pt-2">+33 1 23 45 67 89</li>
-              <li>contact@ophtalmo.fr</li>
+              <li className="pt-2">06 64 47 41 35</li>
+              <li>05 30 34 68 20</li>
+              <li className="pt-2">dr.ktazi@gmail.com</li>
+              <li>
+                <a 
+                  href="https://www.instagram.com/dr.ktazi" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 hover:text-primary transition-colors"
+                >
+                  <Instagram className="w-4 h-4" />
+                  @dr.ktazi
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -114,7 +124,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2024 OphtalmoCare. Tous droits réservés.
+              © 2024 Dr Kenza Tazi. Tous droits réservés.
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">

@@ -30,10 +30,10 @@ const Contact = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-lg">Adresse</h3>
+                <h3 className="font-semibold text-lg">Cabinet</h3>
                 <p className="text-muted-foreground">
-                  123 Avenue de la Santé<br />
-                  75001 Paris, France
+                  Dr Kenza Tazi<br />
+                  Ophtalmologue
                 </p>
               </CardContent>
             </Card>
@@ -45,8 +45,8 @@ const Contact = () => {
                 </div>
                 <h3 className="font-semibold text-lg">Téléphone</h3>
                 <p className="text-muted-foreground">
-                  +33 1 23 45 67 89<br />
-                  +33 6 12 34 56 78
+                  06 64 47 41 35<br />
+                  05 30 34 68 20
                 </p>
               </CardContent>
             </Card>
@@ -58,8 +58,7 @@ const Contact = () => {
                 </div>
                 <h3 className="font-semibold text-lg">Email</h3>
                 <p className="text-muted-foreground">
-                  contact@ophtalmo.fr<br />
-                  rdv@ophtalmo.fr
+                  dr.ktazi@gmail.com
                 </p>
               </CardContent>
             </Card>

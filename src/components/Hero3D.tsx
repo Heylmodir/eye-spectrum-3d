@@ -168,18 +168,17 @@ const Hero3D = () => {
           <div className="space-y-8 text-center lg:text-left">
             <div className="inline-block">
               <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-                Technologie 3D Avancée
+                Excellence en Ophtalmologie
               </span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              Prenez Soin de{" "}
-              <span className="text-primary">Votre Vision</span>
+              Dr <span className="text-primary">Kenza</span> Tazi
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-2xl">
-              Cabinet d'ophtalmologie moderne équipé des dernières technologies 
-              pour des diagnostics précis et des soins personnalisés.
+              Spécialiste en chirurgie oculaire et soins avancés de la vision.
+              Technologie de pointe pour votre santé visuelle.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
