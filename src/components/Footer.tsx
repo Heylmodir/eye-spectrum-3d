@@ -162,7 +162,15 @@ const Footer = () => {
                 <div className="w-8 h-8 rounded-lg bg-medical-red/10 flex items-center justify-center group-hover:bg-medical-red/20 transition-colors">
                   <MapPin className="w-4 h-4 text-medical-red" />
                 </div>
-                <span>Rabat Temara, Maroc</span>
+                <a 
+                  href="https://www.google.com/maps/place/Dr+Kenza+TAZI+-+Ophtalmologue+Rabat+Temara+-+Cabinet+d'ophtalmologie+Oulad+Mtaa+-+%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9+%D8%B7%D8%A8+%D9%88%D8%AC%D8%B1%D8%A7%D8%AD%D8%A9+%D8%A7%D9%84%D8%B9%D9%8A%D9%88%D9%86%E2%80%AD/@33.9399635,-6.9001766,17z/data=!4m6!3m5!1s0xda71326e8b0c307:0x95f28dfdaf2365fa!8m2!3d33.9399635!4d-6.9001766!16s%2Fg%2F11wv595spx?entry=ttu&g_ep=EgoyMDI1MTExMC4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:translate-x-1 transition-transform inline-block"
+                >
+                  Boulevard Sahl Rhone<br />
+                  Oulad Mtaa, Temara
+                </a>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground hover:text-medical-red transition-colors group">
                 <div className="w-8 h-8 rounded-lg bg-medical-red/10 flex items-center justify-center group-hover:bg-medical-red/20 transition-colors">
