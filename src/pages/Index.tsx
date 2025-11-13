@@ -4,6 +4,7 @@ import ImageCarousel from "@/components/ImageCarousel";
 import Services from "@/components/Services";
 import Specialties from "@/components/Specialties";
 import About from "@/components/About";
+import DrivingLicenseMedical from "@/components/DrivingLicenseMedical";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import LocationMap from "@/components/LocationMap";
@@ -42,6 +43,11 @@ const Index = () => {
       {/* Specialties - detailed expertise */}
       <AnimatedSection animation="fade-up" delay={100}>
         <Specialties />
+      </AnimatedSection>
+      
+      {/* Driving License Medical - certified service */}
+      <AnimatedSection animation="fade-up" delay={0}>
+        <DrivingLicenseMedical />
       </AnimatedSection>
       
       {/* Testimonials - social proof */}
