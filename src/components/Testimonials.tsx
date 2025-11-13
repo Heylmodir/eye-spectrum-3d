@@ -187,12 +187,10 @@ const Testimonials = () => {
             {/* Decorative background */}
             <div className="absolute inset-0 bg-gradient-to-r from-medical-red/5 via-medical-red/10 to-medical-red/5 rounded-3xl blur-2xl" />
             
-            <div className="relative grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto p-8 bg-background/50 backdrop-blur-sm rounded-2xl border border-medical-red/20">
+            <div className="relative grid grid-cols-2 gap-8 max-w-3xl mx-auto p-8 bg-background/50 backdrop-blur-sm rounded-2xl border border-medical-red/20">
               {[
-                { value: "98%", label: "Taux de satisfaction", icon: Heart },
-                { value: "5000+", label: "Patients traités", icon: Users },
-                { value: "15+", label: "Années d'expérience", icon: Award },
-                { value: "4.9/5", label: "Note moyenne", icon: Star },
+                { value: "100%", label: "Taux de satisfaction", icon: Heart },
+                { value: "5/5", label: "Note moyenne", icon: Star },
               ].map((stat, idx) => (
                 <div key={idx} className="text-center group cursor-default">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-medical-red to-medical-red-dark flex items-center justify-center shadow-lg shadow-medical-red/30 group-hover:scale-110 transition-transform duration-300">
