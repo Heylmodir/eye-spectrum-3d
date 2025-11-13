@@ -32,9 +32,48 @@ const Hero3D = () => {
     };
     canvas.addEventListener("mousemove", handleMouseMove);
 
-    // Draw 3D eye-like sphere with enhanced depth
+    // Draw 3D eye with ophthalmology-themed effects
     const drawEye = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw ophthalmology grid/measurement lines in background
+      ctx.save();
+      ctx.globalAlpha = 0.08;
+      ctx.strokeStyle = "#dc2626";
+      ctx.lineWidth = 1;
+      
+      // Concentric circles (like eye chart measurements)
+      for (let i = 1; i <= 8; i++) {
+        ctx.beginPath();
+        ctx.arc(canvas.width / 2, canvas.height / 2, i * 60, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      
+      // Cross-hair for medical precision
+      ctx.beginPath();
+      ctx.moveTo(canvas.width / 2 - 200, canvas.height / 2);
+      ctx.lineTo(canvas.width / 2 + 200, canvas.height / 2);
+      ctx.moveTo(canvas.width / 2, canvas.height / 2 - 200);
+      ctx.lineTo(canvas.width / 2, canvas.height / 2 + 200);
+      ctx.stroke();
+      
+      // Angle measurement marks
+      for (let i = 0; i < 12; i++) {
+        const angle = (i * Math.PI * 2) / 12;
+        const r1 = 220;
+        const r2 = 240;
+        ctx.beginPath();
+        ctx.moveTo(
+          canvas.width / 2 + Math.cos(angle) * r1,
+          canvas.height / 2 + Math.sin(angle) * r1
+        );
+        ctx.lineTo(
+          canvas.width / 2 + Math.cos(angle) * r2,
+          canvas.height / 2 + Math.sin(angle) * r2
+        );
+        ctx.stroke();
+      }
+      ctx.restore();
 
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;
@@ -287,6 +326,43 @@ const Hero3D = () => {
       ctx.fillStyle = glowGradient;
       ctx.fill();
       ctx.restore();
+
+      // Visual acuity chart elements (like Snellen chart)
+      ctx.save();
+      ctx.globalAlpha = 0.15;
+      ctx.fillStyle = "#dc2626";
+      ctx.font = "bold 14px monospace";
+      ctx.textAlign = "center";
+      const letters = ["E", "F", "P", "T", "O", "Z"];
+      const positions = [
+        [-180, -150], [180, -150],
+        [-220, 0], [220, 0],
+        [-180, 150], [180, 150]
+      ];
+      
+      letters.forEach((letter, i) => {
+        if (positions[i]) {
+          ctx.fillText(letter, centerX + positions[i][0], centerY + positions[i][1]);
+        }
+      });
+      ctx.restore();
+
+      // Lens refraction effect (corner arcs)
+      ctx.save();
+      ctx.globalAlpha = 0.1;
+      ctx.strokeStyle = "#dc2626";
+      ctx.lineWidth = 3;
+      [
+        [50, 50, 0, Math.PI / 2],
+        [canvas.width - 50, 50, Math.PI / 2, Math.PI],
+        [50, canvas.height - 50, -Math.PI / 2, 0],
+        [canvas.width - 50, canvas.height - 50, Math.PI, 3 * Math.PI / 2]
+      ].forEach(([x, y, start, end]) => {
+        ctx.beginPath();
+        ctx.arc(x, y, 40, start, end);
+        ctx.stroke();
+      });
+      ctx.restore();
     };
 
     // Animation loop
@@ -303,22 +379,26 @@ const Hero3D = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-medical-red-light">
-      {/* Animated background elements */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-muted/30 to-medical-red/5">
+      {/* Ophthalmology-themed background pattern */}
+      <div className="absolute inset-0 overflow-hidden opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(220, 38, 38, 0.1) 50px, rgba(220, 38, 38, 0.1) 51px),
+                           repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(220, 38, 38, 0.1) 50px, rgba(220, 38, 38, 0.1) 51px)`
+        }} />
+      </div>
+
+      {/* Animated lens flare effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse-soft" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-soft animation-delay-1000" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-medical-red/10 rounded-full blur-3xl animate-pulse-soft" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-medical-red/10 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-medical-red-light/20 rounded-full blur-2xl animate-float" />
       </div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div className="space-y-8 text-center lg:text-left">
-            <div className="inline-block">
-              <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-                Excellence en Ophtalmologie
-              </span>
-            </div>
             
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               Dr <span className="text-primary">Kenza</span> Tazi
@@ -354,15 +434,25 @@ const Hero3D = () => {
             </div>
           </div>
 
-          {/* Right content - 3D Canvas */}
+          {/* Right content - 3D Canvas with optical frame */}
           <div className="relative">
+            {/* Medical equipment frame effect */}
+            <div className="absolute inset-0 rounded-2xl border-2 border-medical-red/20 pointer-events-none">
+              <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-medical-red rounded-tl-2xl" />
+              <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-medical-red rounded-tr-2xl" />
+              <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-medical-red rounded-bl-2xl" />
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-medical-red rounded-br-2xl" />
+            </div>
+            
             <canvas
               ref={canvasRef}
-              className="w-full h-[600px] rounded-2xl shadow-2xl"
-              style={{ background: "transparent" }}
+              className="w-full h-[600px] rounded-2xl shadow-2xl bg-gradient-to-br from-background to-muted/30"
             />
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-pulse-soft" />
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-accent/20 rounded-full blur-2xl animate-pulse-soft animation-delay-500" />
+            
+            {/* Optical lens flare effects */}
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-medical-red/20 rounded-full blur-2xl animate-pulse-soft" />
+            <div className="absolute -top-6 -left-6 w-24 h-24 bg-medical-red-light/30 rounded-full blur-2xl animate-pulse-soft" style={{ animationDelay: "0.5s" }} />
+            <div className="absolute top-1/2 -right-4 w-16 h-16 bg-medical-red/15 rounded-full blur-xl animate-pulse-soft" style={{ animationDelay: "0.3s" }} />
           </div>
         </div>
       </div>
