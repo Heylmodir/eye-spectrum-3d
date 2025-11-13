@@ -67,7 +67,7 @@ const Navigation = () => {
             <img 
               src={logo} 
               alt="Cabinet d'Ophtalmologie Logo" 
-              className="w-24 h-24 md:w-28 md:h-28 object-contain transition-transform group-hover:scale-110"
+              className="h-16 md:h-20 w-auto object-contain transition-transform group-hover:scale-110"
             />
           </button>
 
