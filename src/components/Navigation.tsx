@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo-hq.png";
+import logo from "@/assets/logo-latest.png";
 import AppointmentDialog from "@/components/AppointmentDialog";
 
 const Navigation = () => {
