@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles } from "lucide-react";
+import aestheticSurgery from "@/assets/aesthetic-eye-surgery.jpg";
 
 const Specialties = () => {
   return (
@@ -27,8 +28,8 @@ const Specialties = () => {
           <Card className="shadow-2xl border-border/50 overflow-hidden group hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] transition-all duration-500">
             <div className="relative h-80 overflow-hidden">
               <img 
-                src="https://lh3.googleusercontent.com/sitesv/AAzXCkcH3dM1gQLbBYdFndk4wO4D9Drcy7pW5kF--BRyhOEwiZooMiPfiuVoOLE9Ea6cATJNxt1uwO8ugzwxzx_skBXWNSIw7450nEsDcN1738bWfZxG4W0tM_3T2IncIzbEil02n74PL1vQCKQ03vg6xUOXxmLIN-Q_h4C2jzgj08q-LZFgsSAB9CeEN5TfcA6rPVq24zK8AZdVtc-9Bco2zYa32e21NGP0yyY=w1280" 
-                alt="Chirurgie esthétique"
+                src={aestheticSurgery} 
+                alt="Chirurgie esthétique du regard - Instruments chirurgicaux"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
