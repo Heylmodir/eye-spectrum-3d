@@ -1,4 +1,5 @@
-import { MapPin } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card";
 
 const LocationMap = () => {
   // Coordinates for Dr Kenza TAZI - Rabat Temara
@@ -19,6 +20,63 @@ const LocationMap = () => {
           <p className="text-xl text-muted-foreground">
             Rabat Temara - Cabinet d'Ophtalmologie Oulad Mtaa
           </p>
+        </div>
+
+        {/* Contact Info Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
+          <Card className="hover:shadow-lg transition-all hover:border-medical-red/30 group">
+            <CardContent className="p-6 space-y-3">
+              <div className="w-12 h-12 bg-medical-red/10 rounded-lg flex items-center justify-center group-hover:bg-medical-red/20 transition-colors">
+                <MapPin className="w-6 h-6 text-medical-red" />
+              </div>
+              <h3 className="font-semibold text-lg">Adresse</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Cabinet d'Ophtalmologie<br />
+                Oulad Mtaa<br />
+                Rabat Temara, Maroc
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="hover:shadow-lg transition-all hover:border-medical-red/30 group">
+            <CardContent className="p-6 space-y-3">
+              <div className="w-12 h-12 bg-medical-red/10 rounded-lg flex items-center justify-center group-hover:bg-medical-red/20 transition-colors">
+                <Phone className="w-6 h-6 text-medical-red" />
+              </div>
+              <h3 className="font-semibold text-lg">Téléphone</h3>
+              <p className="text-muted-foreground text-sm">
+                <a href="tel:0664474135" className="hover:text-medical-red transition-colors block">06 64 47 41 35</a>
+                <a href="tel:0530346820" className="hover:text-medical-red transition-colors block">05 30 34 68 20</a>
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="hover:shadow-lg transition-all hover:border-medical-red/30 group">
+            <CardContent className="p-6 space-y-3">
+              <div className="w-12 h-12 bg-medical-red/10 rounded-lg flex items-center justify-center group-hover:bg-medical-red/20 transition-colors">
+                <Mail className="w-6 h-6 text-medical-red" />
+              </div>
+              <h3 className="font-semibold text-lg">Email</h3>
+              <p className="text-muted-foreground text-sm">
+                <a href="mailto:dr.ktazi@gmail.com" className="hover:text-medical-red transition-colors">
+                  dr.ktazi@gmail.com
+                </a>
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="hover:shadow-lg transition-all hover:border-medical-red/30 group">
+            <CardContent className="p-6 space-y-3">
+              <div className="w-12 h-12 bg-medical-red/10 rounded-lg flex items-center justify-center group-hover:bg-medical-red/20 transition-colors">
+                <Clock className="w-6 h-6 text-medical-red" />
+              </div>
+              <h3 className="font-semibold text-lg">Horaires</h3>
+              <p className="text-muted-foreground text-sm">
+                Lun - Ven: 9h - 18h<br />
+                Sam: 9h - 13h
+              </p>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Map Container with Red Frame */}
