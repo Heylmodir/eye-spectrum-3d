@@ -1,6 +1,8 @@
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, Eye, Sparkles, Scan, Focus, Camera, Glasses } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import AnimatedSection from "./AnimatedSection";
+
+const eyeIcons = [Eye, Sparkles, Scan, Focus, Camera, Glasses];
 
 const testimonials = [
   {
@@ -85,10 +87,15 @@ const Testimonials = () => {
                   {/* Header with avatar and info */}
                   <div className="flex items-start gap-4 mb-4">
                     <div className="relative">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-medical-red to-medical-red-dark flex items-center justify-center text-white font-bold text-xl border-2 border-medical-red/20 group-hover:border-medical-red/50 transition-colors">
-                        {testimonial.initials}
-                      </div>
-                      <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-medical-red rounded-full flex items-center justify-center">
+                      {(() => {
+                        const EyeIcon = eyeIcons[index % eyeIcons.length];
+                        return (
+                          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-medical-red to-medical-red-dark flex items-center justify-center text-white border-2 border-medical-red/20 group-hover:border-medical-red/50 transition-all group-hover:scale-110 duration-300">
+                            <EyeIcon className="w-8 h-8" />
+                          </div>
+                        );
+                      })()}
+                      <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-medical-red rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                         <Quote className="w-3 h-3 text-white" />
                       </div>
                     </div>
