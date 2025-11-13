@@ -400,18 +400,18 @@ const Hero3D = () => {
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
-          <div className="space-y-8 text-center lg:text-left">
+          <div className="space-y-8 text-center">
             
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               Dr <span className="text-primary">Kenza</span> Tazi
             </h1>
             
-            <p className="text-xl text-muted-foreground max-w-2xl">
-              Spécialiste en maladies et chirurgie oculaire pour adultes et enfants. <br />
-              À vos cotés pour prendre soin de votre santé visuelle avec attention et expertise.
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Spécialiste en maladies et chirurgie des yeux pour adultes et enfants. <br />
+              À vos côtés pour prendre soin de votre santé visuelle avec attention et expertise.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <AppointmentDialog 
                 open={isAppointmentDialogOpen}
                 onOpenChange={setIsAppointmentDialogOpen}

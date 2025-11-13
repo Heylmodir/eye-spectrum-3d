@@ -23,7 +23,7 @@ const About = () => {
             </h2>
 
             <p className="text-lg text-muted-foreground">
-              Avec plusieurs années d'expérience, notre cabinet combine expertise médicale et technologie de pointe pour offrir des soins oculaires de qualité. Notre savoir est dédié à préserver et améliorer votre vision.
+              Avec plusieurs années d'expérience, notre cabinet combine expertise médicale et technologie de pointe pour offrir des soins oculaires de qualité. Notre savoir est dédié à préserver et à améliorer votre vision.
             </p>
 
             <div className="grid grid-cols-2 gap-6 py-6">
