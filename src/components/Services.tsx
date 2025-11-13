@@ -1,11 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Eye, Scan, Glasses, Activity, Microscope, Shield } from "lucide-react";
-import serviceCataract from "@/assets/service-cataract.jpg";
-import serviceLaser from "@/assets/service-laser.jpg";
-import serviceRetina from "@/assets/service-retina.jpg";
-import serviceGlaucoma from "@/assets/service-glaucoma.jpg";
-import servicePediatric from "@/assets/service-pediatric.jpg";
-import serviceLenses from "@/assets/service-lenses.jpg";
+import { Eye, Scan, Glasses, Activity, Microscope, Shield, Sparkles } from "lucide-react";
+import serviceCataract from "@/assets/service-cataract-new.jpg";
+import serviceLaser from "@/assets/service-laser-new.jpg";
+import serviceRetina from "@/assets/service-retina-new.jpg";
+import serviceGlaucoma from "@/assets/service-glaucoma-new.jpg";
+import servicePediatric from "@/assets/service-pediatric-new.jpg";
+import serviceLenses from "@/assets/service-lenses-new.jpg";
 
 const services = [
   {
@@ -48,12 +48,31 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section className="relative py-24 bg-gradient-to-br from-muted/30 via-background to-muted/30 overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 right-10 animate-float">
+          <Sparkles className="w-32 h-32 text-medical-red" />
+        </div>
+        <div className="absolute bottom-40 left-20 animate-float" style={{ animationDelay: "1.5s" }}>
+          <Eye className="w-24 h-24 text-medical-red" />
+        </div>
+      </div>
+
+      {/* Glowing orbs */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-medical-red/10 rounded-full blur-3xl animate-pulse-soft" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: "1s" }} />
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Nos <span className="text-primary">Services</span>
-          </h2>
+          <div className="inline-flex items-center gap-3 mb-6">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-medical-red to-medical-red-dark flex items-center justify-center shadow-lg shadow-medical-red/30">
+              <Eye className="w-6 h-6 text-white" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Nos <span className="bg-gradient-to-r from-medical-red to-primary bg-clip-text text-transparent">Services</span>
+            </h2>
+          </div>
           <p className="text-xl text-muted-foreground">
             Des soins complets et personnalisés pour préserver votre vision
           </p>
@@ -63,23 +82,39 @@ const Services = () => {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-border/50 hover:border-primary/50 bg-card overflow-hidden"
+              className="group relative hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 border-transparent hover:border-medical-red/30 bg-card overflow-hidden"
             >
-              <div className="relative h-48 overflow-hidden">
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-medical-red/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+              
+              {/* Floating glow */}
+              <div className="absolute -top-12 -right-12 w-32 h-32 bg-medical-red/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative h-56 overflow-hidden">
                 <img 
                   src={service.image} 
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-90 group-hover:opacity-70 transition-opacity" />
-                <div className="absolute bottom-4 left-4 w-14 h-14 rounded-lg bg-primary/90 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <service.icon className="w-7 h-7 text-white" />
+                {/* Creative gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-95 group-hover:opacity-80 transition-opacity" />
+                
+                {/* Icon with enhanced styling */}
+                <div className="absolute bottom-4 left-4 w-16 h-16 rounded-xl bg-gradient-to-br from-medical-red to-medical-red-dark backdrop-blur-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl shadow-medical-red/40">
+                  <service.icon className="w-8 h-8 text-white" />
                 </div>
+
+                {/* Decorative corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 border-t-4 border-r-4 border-medical-red/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <CardHeader>
-                <CardTitle className="text-xl group-hover:text-primary transition-colors">{service.title}</CardTitle>
+              
+              <CardHeader className="relative z-20">
+                <CardTitle className="text-xl group-hover:text-medical-red transition-colors duration-300">
+                  {service.title}
+                </CardTitle>
               </CardHeader>
-              <CardContent>
+              
+              <CardContent className="relative z-20">
                 <CardDescription className="text-base leading-relaxed">
                   {service.description}
                 </CardDescription>
