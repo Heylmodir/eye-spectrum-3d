@@ -58,7 +58,7 @@ const Navigation = () => {
           : "bg-gradient-to-b from-background/40 via-background/20 to-transparent backdrop-blur-sm"
       }`}
     >
-      <nav className="container mx-auto px-4 py-3 md:py-4">
+      <nav className="container mx-auto px-4 py-2 md:py-2.5">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <button
@@ -74,14 +74,14 @@ const Navigation = () => {
           </button>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0.5">
             {menuItems.map((item) => (
               <Button
                 key={item.id}
                 variant="ghost"
                 size="sm"
                 onClick={() => handleMenuClick(item)}
-                className="text-xs font-medium text-foreground hover:text-medical-red hover:bg-medical-red/10 transition-colors px-2 py-1 h-8"
+                className="text-[11px] font-medium text-foreground hover:text-medical-red hover:bg-medical-red/10 transition-colors px-1.5 py-0.5 h-7"
               >
                 {item.label}
               </Button>
@@ -90,14 +90,14 @@ const Navigation = () => {
               href="https://www.instagram.com/dr.ktazi"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-2"
+              className="ml-1.5"
             >
               <Button
                 variant="outline"
                 size="sm"
-                className="border-medical-red text-medical-red hover:bg-medical-red hover:text-white transition-colors h-8 w-8 p-0"
+                className="border-medical-red text-medical-red hover:bg-medical-red hover:text-white transition-colors h-7 w-7 p-0"
               >
-                <Instagram className="h-3.5 w-3.5" />
+                <Instagram className="h-3 w-3" />
               </Button>
             </a>
           </div>
