@@ -80,7 +80,7 @@ const LocationMap = () => {
               </div>
               <h3 className="font-semibold text-lg group-hover:text-medical-red transition-colors">Horaires</h3>
               <p className="text-muted-foreground text-sm">
-                Lun - Ven: 9h - 18h<br />
+                Lun - Ven: 9h - 17h30<br />
                 Sam: 9h - 13h
               </p>
             </CardContent>
