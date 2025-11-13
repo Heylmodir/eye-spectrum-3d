@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Instagram, Linkedin, Eye, Sparkles, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import logo from "@/assets/logo-latest.png";
 
 const Footer = () => {
@@ -29,7 +30,7 @@ const Footer = () => {
           {/* Logo */}
           <div className="space-y-6">
             <div className="flex items-center justify-center md:justify-start">
-              <img 
+              <OptimizedImage 
                 src={logo} 
                 alt="Cabinet d'Ophtalmologie Logo" 
                 className="h-24 sm:h-28 md:h-32 lg:h-36 w-auto object-contain"
@@ -159,7 +160,7 @@ const Footer = () => {
         {/* Decorative Logo Divider */}
         <div className="flex items-center justify-center mb-8 gap-4">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-medical-red/30 to-medical-red/30" />
-          <img 
+          <OptimizedImage 
             src={logo} 
             alt="Logo" 
             className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"

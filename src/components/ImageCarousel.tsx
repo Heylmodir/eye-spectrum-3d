@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import clinicExamRoom from "@/assets/clinic-exam-room.jpg";
 import clinicReception from "@/assets/clinic-reception.jpg";
 import clinicOffice from "@/assets/clinic-office.jpg";
@@ -103,11 +104,10 @@ const ImageCarousel = () => {
                       : "opacity-0 scale-105"
                   }`}
                 >
-                  <img
+                  <OptimizedImage
                     src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover"
-                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-medical-red/40 via-transparent to-transparent" />
                   

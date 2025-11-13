@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import aestheticSurgery from "@/assets/aesthetic-eye-surgery.jpg";
 
 const Specialties = () => {
@@ -27,7 +28,7 @@ const Specialties = () => {
         <div className="max-w-5xl mx-auto">
           <Card className="shadow-2xl border-border/50 overflow-hidden group hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] transition-all duration-500">
             <div className="relative h-80 overflow-hidden">
-              <img 
+              <OptimizedImage 
                 src={aestheticSurgery} 
                 alt="Chirurgie esthétique du regard - Instruments chirurgicaux"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

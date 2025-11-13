@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Award, Users, Heart, TrendingUp } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import drSurgery1 from "@/assets/dr-kenza-surgery-1.png";
 import drSurgery2 from "@/assets/dr-kenza-surgery-2.png";
 
@@ -72,7 +73,7 @@ const About = () => {
               {/* Main image with red frame */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl group border-4 border-medical-red">
                 <div className="absolute inset-0 bg-gradient-to-br from-medical-red/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                <img 
+                <OptimizedImage 
                   src={drSurgery1} 
                   alt="Dr Kenza Tazi en chirurgie" 
                   className="w-full h-[450px] object-contain bg-white group-hover:scale-105 transition-transform duration-500"
@@ -92,7 +93,7 @@ const About = () => {
               {/* Secondary image with red frame */}
               <div className="relative rounded-2xl overflow-hidden shadow-xl group border-4 border-medical-red">
                 <div className="absolute inset-0 bg-gradient-to-br from-medical-red/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                <img 
+                <OptimizedImage 
                   src={drSurgery2} 
                   alt="Équipement médical moderne" 
                   className="w-full h-[350px] object-contain bg-white group-hover:scale-105 transition-transform duration-500"

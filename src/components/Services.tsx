@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Eye, Scan, Glasses, Activity, Microscope, Shield, Sparkles } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import serviceCataract from "@/assets/service-cataract-new.jpg";
 import serviceLaser from "@/assets/service-laser-new.jpg";
 import serviceRetina from "@/assets/service-retina-new.jpg";
@@ -91,7 +92,7 @@ const Services = () => {
               <div className="absolute -top-12 -right-12 w-32 h-32 bg-medical-red/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="relative h-56 overflow-hidden">
-                <img 
+                <OptimizedImage 
                   src={service.image} 
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import logo from "@/assets/logo-latest.png";
 import AppointmentDialog from "@/components/AppointmentDialog";
 
@@ -64,9 +65,10 @@ const Navigation = () => {
             onClick={() => scrollToSection("accueil")}
             className="flex items-center gap-3 group"
           >
-            <img 
+            <OptimizedImage 
               src={logo} 
               alt="Cabinet d'Ophtalmologie Logo" 
+              eager
               className="h-10 sm:h-12 md:h-14 lg:h-20 w-auto object-contain"
             />
           </button>
