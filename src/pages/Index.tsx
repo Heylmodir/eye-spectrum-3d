@@ -6,6 +6,8 @@ import Specialties from "@/components/Specialties";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
+import HoursAndInfo from "@/components/HoursAndInfo";
+import LocationMap from "@/components/LocationMap";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -49,17 +51,11 @@ const Index = () => {
       </AnimatedSection>
       
       <AnimatedSection animation="fade-up" delay={0}>
-        <section id="horaires">
-          <div className="container mx-auto px-4 py-16 text-center">
-            <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-medical-red to-medical-red-dark bg-clip-text text-transparent">
-              Horaires d'ouverture
-            </h2>
-            <div className="max-w-md mx-auto bg-card border border-border rounded-lg p-8 shadow-lg">
-              <p className="text-muted-foreground mb-4">Les horaires seront bientôt disponibles</p>
-              <p className="text-sm text-muted-foreground">Contactez-nous pour plus d'informations</p>
-            </div>
-          </div>
-        </section>
+        <HoursAndInfo />
+      </AnimatedSection>
+      
+      <AnimatedSection animation="fade-up" delay={0}>
+        <LocationMap />
       </AnimatedSection>
       
       <Footer />
