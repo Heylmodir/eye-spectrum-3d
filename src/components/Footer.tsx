@@ -149,7 +149,7 @@ const Footer = () => {
                   <Clock className="w-4 h-4 text-medical-red" />
                 </div>
                 <div>
-                  <div>Lun - Ven: 9h - 18h</div>
+                  <div>Lun - Ven: 9h - 17h30</div>
                   <div>Sam: 9h - 13h</div>
                 </div>
               </li>
