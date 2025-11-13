@@ -6,6 +6,7 @@ import Specialties from "@/components/Specialties";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const Index = () => {
   return (
@@ -37,6 +38,7 @@ const Index = () => {
         </div>
       </section>
       <Footer />
+      <FloatingWhatsApp />
     </main>
   );
 };
