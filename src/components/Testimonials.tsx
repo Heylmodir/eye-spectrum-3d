@@ -10,8 +10,6 @@ import review5 from "@/assets/review-5.jpg";
 import review6 from "@/assets/review-6.jpg";
 import review7 from "@/assets/review-7.jpg";
 import review8 from "@/assets/review-8.jpg";
-import review9 from "@/assets/review-9.jpg";
-import review10 from "@/assets/review-10.jpg";
 
 const reviewImages = [
   review1,
@@ -21,9 +19,7 @@ const reviewImages = [
   review5,
   review6,
   review7,
-  review8,
-  review9,
-  review10
+  review8
 ];
 
 const Testimonials = () => {
