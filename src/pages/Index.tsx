@@ -4,6 +4,7 @@ import ImageCarousel from "@/components/ImageCarousel";
 import Services from "@/components/Services";
 import Specialties from "@/components/Specialties";
 import About from "@/components/About";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -35,6 +36,10 @@ const Index = () => {
         <section id="about">
           <About />
         </section>
+      </AnimatedSection>
+      
+      <AnimatedSection animation="fade-up" delay={0}>
+        <Testimonials />
       </AnimatedSection>
       
       <AnimatedSection animation="fade-up" delay={0}>
