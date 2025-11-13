@@ -72,11 +72,6 @@ const appointmentSchema = z.object({
     .trim()
     .min(2, { message: "Le nom doit contenir au moins 2 caractères" })
     .max(50, { message: "Le nom ne peut pas dépasser 50 caractères" }),
-  email: z
-    .string()
-    .trim()
-    .email({ message: "Adresse email invalide" })
-    .max(255, { message: "L'email ne peut pas dépasser 255 caractères" }),
   phone: z
     .string()
     .trim()
@@ -111,7 +106,6 @@ const AppointmentBookingForm = () => {
     defaultValues: {
       firstName: "",
       lastName: "",
-      email: "",
       phone: "",
       notes: "",
     },
@@ -164,7 +158,6 @@ Je souhaite prendre rendez-vous pour une consultation.
 📋 Informations du patient:
 Nom: ${values.lastName}
 Prénom: ${values.firstName}
-Email: ${values.email || "Non fourni"}
 Téléphone: ${values.phone}
 
 📅 Rendez-vous souhaité:
@@ -240,45 +233,24 @@ Merci de me confirmer la disponibilité.`;
             </div>
 
             {/* Contact Fields */}
-            <div className="grid md:grid-cols-2 gap-6">
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email *</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="email"
-                        placeholder="jean.dupont@email.com"
-                        {...field}
-                        className="border-border focus:border-primary"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="phone"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Téléphone *</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="tel"
-                        placeholder="06 12 34 56 78"
-                        {...field}
-                        className="border-border focus:border-primary"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Téléphone *</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="tel"
+                      placeholder="06 12 34 56 78"
+                      {...field}
+                      className="border-border focus:border-primary"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
             {/* Date and Time Fields */}
             <div className="grid md:grid-cols-2 gap-6">
