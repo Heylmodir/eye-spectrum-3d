@@ -1,4 +1,5 @@
 import AppointmentBookingForm from "./AppointmentBookingForm";
+import { Phone, Mail, Clock, MapPin } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -13,9 +14,68 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 mb-12">
+          {/* Contact Information */}
+          <div className="space-y-6">
+            <div className="bg-card p-6 rounded-lg shadow-sm">
+              <div className="flex items-start gap-4">
+                <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Adresse</h3>
+                  <p className="text-muted-foreground">
+                    Cabinet d'Ophtalmologie<br />
+                    Oulad Mtaa<br />
+                    Rabat Temara, Maroc
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-card p-6 rounded-lg shadow-sm">
+              <div className="flex items-start gap-4">
+                <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Téléphone</h3>
+                  <p className="text-muted-foreground">
+                    <a href="tel:0664474135" className="hover:text-primary transition-colors">06 64 47 41 35</a><br />
+                    <a href="tel:0530346820" className="hover:text-primary transition-colors">05 30 34 68 20</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-card p-6 rounded-lg shadow-sm">
+              <div className="flex items-start gap-4">
+                <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Email</h3>
+                  <p className="text-muted-foreground">
+                    <a href="mailto:dr.ktazi@gmail.com" className="hover:text-primary transition-colors">
+                      dr.ktazi@gmail.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-card p-6 rounded-lg shadow-sm">
+              <div className="flex items-start gap-4">
+                <Clock className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Horaires</h3>
+                  <p className="text-muted-foreground">
+                    Lun - Ven: 9h - 17h30<br />
+                    Sam: 9h - 13h
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Appointment Booking Form */}
-          <AppointmentBookingForm />
+          <div>
+            <AppointmentBookingForm />
+          </div>
         </div>
       </div>
     </section>
