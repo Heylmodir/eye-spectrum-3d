@@ -407,7 +407,8 @@ const Hero3D = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-2xl">
-              Spécialiste en maladies et chirurgie oculaire pour adultes et enfants. À vos cotés pour prendre soin de votre santé visuelle avec attention et expertise.
+              Spécialiste en maladies et chirurgie oculaire pour adultes et enfants. <br />
+              À vos cotés pour prendre soin de votre santé visuelle avec attention et expertise.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
