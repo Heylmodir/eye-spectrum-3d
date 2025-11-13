@@ -12,7 +12,7 @@ const carouselImages = [
   {
     src: clinicReception,
     alt: "Réception Cabinet Dr Kenza Tazi - Accueil chaleureux et moderne",
-    title: "Réception"
+    title: "Accueil"
   },
   {
     src: clinicWaitingRoom,
@@ -27,7 +27,7 @@ const carouselImages = [
   {
     src: clinicOffice,
     alt: "Cabinet de consultation Dr Kenza Tazi avec équipement moderne",
-    title: "Cabinet de Consultation"
+    title: "Bureau du médecin"
   },
   {
     src: clinicTreatmentRoom,
