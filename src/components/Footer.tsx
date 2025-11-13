@@ -102,12 +102,12 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               {[
-                { label: "Cataracte", id: "chirurgie-de-la-cataracte" },
                 { label: "Laser Réfractif", id: "chirurgie-refractive-au-laser" },
-                { label: "Rétine", id: "maladies-de-la-retine" },
+                { label: "Cataracte", id: "chirurgie-de-la-cataracte" },
                 { label: "Glaucome", id: "glaucome" },
+                { label: "Rétine", id: "maladies-de-la-retine" },
                 { label: "Ophtalmologie pédiatrique", id: "ophtalmologie-pediatrique" },
-                { label: "Esthétique", id: "specialties" }
+                { label: "Esthétique du regard", id: "specialties" }
               ].map((service) => (
                 <li key={service.label}>
                   <a 
