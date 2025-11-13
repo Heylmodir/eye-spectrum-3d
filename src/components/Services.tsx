@@ -50,13 +50,13 @@ const services = [
   {
     icon: Scissors,
     title: "Chirurgie Esthétique du Regard",
-    description: "La chirurgie plastique et reconstructrice de l'orbite et des paupières permet de corriger les défauts esthétiques et fonctionnels de la région périoculaire. Qu'il s'agisse de paupières tombantes (ptosis), de poches sous les yeux, ou de rides périoculaires, nous proposons des solutions chirurgicales personnalisées pour rajeunir le regard tout en préservant la fonction oculaire. Chaque intervention est adaptée aux besoins spécifiques du patient pour un résultat naturel et harmonieux.",
+    description: "La chirurgie plastique reconstructrice et esthétique de l'orbite et des paupières permet de corriger les défauts visibles du tiers supérieur du visage, qui peuvent résulter du vieillissement, d'une malformation congénitale, d'un traumatisme facial ou encore d'un épisode carcinologique. Les options thérapeutiques sont nombreuses et variables, allant des injections de la face à la blépharoplastie chirurgicale. Une consultation spécialisée, avec un interrogatoire minutieux et un examen complet, permet de proposer la solution la plus adaptée à chaque patient.",
     image: serviceAesthetic,
   },
   {
     icon: Car,
     title: "Visite Médicale du Permis de Conduire",
-    description: "Dr Kenza Tazi est agréée pour effectuer la visite médicale d'aptitude à la conduite. L'examen comprend un bilan ophtalmologique complet incluant l'acuité visuelle, le champ visuel, la vision des couleurs et la sensibilité aux contrastes. Le certificat médical est délivré immédiatement après l'examen. Cette visite est obligatoire pour l'obtention ou le renouvellement du permis de conduire selon la réglementation en vigueur.",
+    description: "Dr Kenza Tazi est agréée pour effectuer la visite médicale d'aptitude à la conduite.",
     image: serviceDrivingLicense,
   },
 ];
