@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpg";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,11 +51,13 @@ const Navigation = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection("accueil")}
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-3 group"
           >
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-medical-red to-medical-red-dark flex items-center justify-center shadow-lg group-hover:shadow-medical-red/50 transition-all">
-              <span className="text-white font-bold text-xl">KT</span>
-            </div>
+            <img 
+              src={logo} 
+              alt="Dr Kenza Tazi Logo" 
+              className="w-14 h-14 object-contain transition-transform group-hover:scale-105"
+            />
             <div className="hidden md:block">
               <h1 className="text-xl font-bold text-foreground">Dr Kenza Tazi</h1>
               <p className="text-xs text-muted-foreground">Ophtalmologue</p>

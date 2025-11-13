@@ -39,7 +39,7 @@ const Hero3D = () => {
       // Draw ophthalmology grid/measurement lines in background
       ctx.save();
       ctx.globalAlpha = 0.08;
-      ctx.strokeStyle = "#dc2626";
+      ctx.strokeStyle = "#9B2F2F";
       ctx.lineWidth = 1;
       
       // Concentric circles (like eye chart measurements)
@@ -122,7 +122,7 @@ const Hero3D = () => {
         const endX = centerX + Math.cos(angle) * radius * 0.9;
         const endY = centerY + Math.sin(angle) * radius * 0.9;
         
-        ctx.strokeStyle = "#dc2626";
+        ctx.strokeStyle = "#9B2F2F";
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(startX, startY);
@@ -170,11 +170,11 @@ const Hero3D = () => {
         centerY + tiltX * 30,
         irisRadius
       );
-      irisGradient.addColorStop(0, "#ff6b6b");
-      irisGradient.addColorStop(0.2, "#ef4444");
-      irisGradient.addColorStop(0.4, "#dc2626");
-      irisGradient.addColorStop(0.7, "#b91c1c");
-      irisGradient.addColorStop(1, "#7f1d1d");
+      irisGradient.addColorStop(0, "#C9554C");
+      irisGradient.addColorStop(0.2, "#B84639");
+      irisGradient.addColorStop(0.4, "#A52A2A");
+      irisGradient.addColorStop(0.7, "#8B2222");
+      irisGradient.addColorStop(1, "#6B1A1A");
 
       ctx.beginPath();
       ctx.arc(
@@ -192,7 +192,7 @@ const Hero3D = () => {
       ctx.globalAlpha = 0.3;
       for (let i = 0; i < 36; i++) {
         const angle = (Math.PI * 2 * i) / 36;
-        ctx.strokeStyle = i % 2 === 0 ? "#7f1d1d" : "#991b1b";
+        ctx.strokeStyle = i % 2 === 0 ? "#6B1A1A" : "#7B1F1F";
         ctx.lineWidth = 1.5;
         ctx.beginPath();
         ctx.moveTo(
@@ -216,7 +216,7 @@ const Hero3D = () => {
         0,
         Math.PI * 2
       );
-      ctx.strokeStyle = "rgba(127, 29, 29, 0.5)";
+      ctx.strokeStyle = "rgba(107, 26, 26, 0.5)";
       ctx.lineWidth = 2;
       ctx.stroke();
 
@@ -297,8 +297,8 @@ const Hero3D = () => {
         
         // Particle
         const particleGradient = ctx.createRadialGradient(x, y, 0, x, y, size);
-        particleGradient.addColorStop(0, `rgba(239, 68, 68, ${0.8 + Math.sin(rotation * 3 + i) * 0.2})`);
-        particleGradient.addColorStop(1, `rgba(220, 38, 38, ${0.3 + Math.sin(rotation * 3 + i) * 0.2})`);
+        particleGradient.addColorStop(0, `rgba(165, 42, 42, ${0.8 + Math.sin(rotation * 3 + i) * 0.2})`);
+        particleGradient.addColorStop(1, `rgba(139, 34, 34, ${0.3 + Math.sin(rotation * 3 + i) * 0.2})`);
         
         ctx.beginPath();
         ctx.arc(x, y, size, 0, Math.PI * 2);
@@ -317,9 +317,9 @@ const Hero3D = () => {
         centerY + tiltX * 20,
         radius * 1.2
       );
-      glowGradient.addColorStop(0, "rgba(220, 38, 38, 0)");
-      glowGradient.addColorStop(0.8, "rgba(220, 38, 38, 0.05)");
-      glowGradient.addColorStop(1, "rgba(220, 38, 38, 0.15)");
+      glowGradient.addColorStop(0, "rgba(165, 42, 42, 0)");
+      glowGradient.addColorStop(0.8, "rgba(165, 42, 42, 0.05)");
+      glowGradient.addColorStop(1, "rgba(165, 42, 42, 0.15)");
       
       ctx.beginPath();
       ctx.arc(centerX + tiltY * 20, centerY + tiltX * 20, radius * 1.2, 0, Math.PI * 2);
@@ -330,7 +330,7 @@ const Hero3D = () => {
       // Visual acuity chart elements (like Snellen chart)
       ctx.save();
       ctx.globalAlpha = 0.15;
-      ctx.fillStyle = "#dc2626";
+      ctx.fillStyle = "#9B2F2F";
       ctx.font = "bold 14px monospace";
       ctx.textAlign = "center";
       const letters = ["E", "F", "P", "T", "O", "Z"];
@@ -350,7 +350,7 @@ const Hero3D = () => {
       // Lens refraction effect (corner arcs)
       ctx.save();
       ctx.globalAlpha = 0.1;
-      ctx.strokeStyle = "#dc2626";
+      ctx.strokeStyle = "#9B2F2F";
       ctx.lineWidth = 3;
       [
         [50, 50, 0, Math.PI / 2],

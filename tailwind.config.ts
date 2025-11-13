@@ -51,6 +51,7 @@ export default {
           red: "hsl(var(--medical-red))",
           "red-dark": "hsl(var(--medical-red-dark))",
           "red-light": "hsl(var(--medical-red-light))",
+          beige: "hsl(var(--medical-beige))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

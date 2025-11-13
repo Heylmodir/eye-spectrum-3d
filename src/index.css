@@ -17,7 +17,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 15%;
 
-    --primary: 0 84% 60%;
+    --primary: 0 63% 39%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 96%;
@@ -26,30 +26,31 @@ All colors MUST be HSL.
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 0 72% 51%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 38 35% 69%;
+    --accent-foreground: 0 0% 15%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 63% 39%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 0 84% 60%;
+    --ring: 0 63% 39%;
 
     --radius: 0.75rem;
     
-    /* Custom medical theme colors */
-    --medical-red: 0 84% 60%;
-    --medical-red-dark: 0 72% 51%;
-    --medical-red-light: 0 86% 95%;
+    /* Custom medical theme colors - Burgundy from logo */
+    --medical-red: 0 63% 39%;
+    --medical-red-dark: 0 55% 30%;
+    --medical-red-light: 0 45% 95%;
+    --medical-beige: 38 35% 69%;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 84% 60% / 0.1), hsl(0 0% 100%));
-    --gradient-accent: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 72% 51%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 63% 39% / 0.1), hsl(0 0% 100%));
+    --gradient-accent: linear-gradient(135deg, hsl(0 63% 39%), hsl(0 55% 30%));
     
     /* Shadows */
     --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.08);
-    --shadow-medical: 0 8px 30px hsl(0 84% 60% / 0.15);
+    --shadow-medical: 0 8px 30px hsl(0 63% 39% / 0.15);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -83,7 +84,7 @@ All colors MUST be HSL.
     --popover: 0 0% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 84% 60%;
+    --primary: 0 63% 45%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 20%;
@@ -92,19 +93,20 @@ All colors MUST be HSL.
     --muted: 0 0% 20%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 0 72% 51%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 38 35% 69%;
+    --accent-foreground: 0 0% 15%;
 
-    --destructive: 0 62% 50%;
+    --destructive: 0 63% 45%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 0 84% 60%;
+    --ring: 0 63% 45%;
     
-    --medical-red: 0 84% 60%;
-    --medical-red-dark: 0 72% 51%;
+    --medical-red: 0 63% 45%;
+    --medical-red-dark: 0 55% 35%;
     --medical-red-light: 0 40% 25%;
+    --medical-beige: 38 35% 69%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
