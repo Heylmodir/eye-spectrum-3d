@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { Menu, X, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.jpg";
+import AppointmentDialog from "@/components/AppointmentDialog";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAppointmentDialogOpen, setIsAppointmentDialogOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,12 +33,21 @@ const Navigation = () => {
   };
 
   const menuItems = [
-    { label: "Accueil", id: "accueil" },
-    { label: "Services", id: "services" },
-    { label: "Prendre Rendez-vous", id: "contact" },
-    { label: "Horaires", id: "horaires" },
-    { label: "À Propos", id: "about" },
+    { label: "Accueil", id: "accueil", isDialog: false },
+    { label: "Services", id: "services", isDialog: false },
+    { label: "Prendre Rendez-vous", id: "contact", isDialog: true },
+    { label: "Horaires", id: "horaires", isDialog: false },
+    { label: "À Propos", id: "about", isDialog: false },
   ];
+
+  const handleMenuClick = (item: typeof menuItems[0]) => {
+    if (item.isDialog) {
+      setIsAppointmentDialogOpen(true);
+      setIsMobileMenuOpen(false);
+    } else {
+      scrollToSection(item.id);
+    }
+  };
 
   return (
     <header
@@ -70,7 +81,7 @@ const Navigation = () => {
               <Button
                 key={item.id}
                 variant="ghost"
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleMenuClick(item)}
                 className="text-foreground hover:text-medical-red hover:bg-medical-red/10 transition-colors"
               >
                 {item.label}
@@ -92,6 +103,11 @@ const Navigation = () => {
             </a>
           </div>
 
+          <AppointmentDialog 
+            open={isAppointmentDialogOpen}
+            onOpenChange={setIsAppointmentDialogOpen}
+          />
+
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
@@ -111,7 +127,7 @@ const Navigation = () => {
                 <Button
                   key={item.id}
                   variant="ghost"
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => handleMenuClick(item)}
                   className="justify-start text-foreground hover:text-medical-red hover:bg-medical-red/10 transition-colors"
                 >
                   {item.label}

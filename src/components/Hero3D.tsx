@@ -1,8 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
+import AppointmentDialog from "@/components/AppointmentDialog";
 
 const Hero3D = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isAppointmentDialogOpen, setIsAppointmentDialogOpen] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -410,21 +412,18 @@ const Hero3D = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                size="lg" 
-                onClick={() => {
-                  const element = document.getElementById('contact');
-                  if (element) {
-                    const offset = 80;
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - offset;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                  }
-                }}
-                className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all"
-              >
-                Prendre Rendez-vous
-              </Button>
+              <AppointmentDialog 
+                open={isAppointmentDialogOpen}
+                onOpenChange={setIsAppointmentDialogOpen}
+                trigger={
+                  <Button 
+                    size="lg"
+                    className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all"
+                  >
+                    Prendre Rendez-vous
+                  </Button>
+                }
+              />
               <Button 
                 size="lg" 
                 variant="outline" 

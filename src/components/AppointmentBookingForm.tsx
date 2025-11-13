@@ -29,7 +29,6 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 
@@ -197,17 +196,13 @@ Merci de me confirmer la disponibilité.`;
   };
 
   return (
-    <Card className="shadow-xl">
-      <CardContent className="p-8">
-        <div className="mb-6">
-          <h3 className="text-2xl font-bold mb-2">Prendre Rendez-vous</h3>
-          <p className="text-muted-foreground">
-            Remplissez le formulaire ci-dessous et nous vous contacterons pour confirmer votre rendez-vous
-          </p>
-        </div>
+    <div>
+      <p className="text-muted-foreground mb-6">
+        Remplissez le formulaire ci-dessous et nous vous contacterons pour confirmer votre rendez-vous
+      </p>
 
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             {/* Name Fields */}
             <div className="grid md:grid-cols-2 gap-6">
               <FormField
@@ -432,8 +427,7 @@ Merci de me confirmer la disponibilité.`;
             </p>
           </form>
         </Form>
-      </CardContent>
-    </Card>
+    </div>
   );
 };
 
