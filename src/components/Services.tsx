@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Eye, Scan, Glasses, Activity, Microscope, Shield, Sparkles } from "lucide-react";
+import { Eye, Scan, Glasses, Activity, Microscope, Shield, Sparkles, Scissors, Car } from "lucide-react";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import serviceCataract from "@/assets/service-cataract-new.jpg";
 import serviceLaser from "@/assets/service-laser-new.jpg";
@@ -7,6 +7,8 @@ import serviceRetina from "@/assets/service-retina-new.jpg";
 import serviceGlaucoma from "@/assets/service-glaucoma-new.jpg";
 import servicePediatric from "@/assets/service-pediatric-real.jpg";
 import serviceLenses from "@/assets/service-lenses-new.jpg";
+import serviceAesthetic from "@/assets/aesthetic-eye-surgery.jpg";
+import serviceDrivingLicense from "@/assets/service-driving-license.jpg";
 
 const services = [
   {
@@ -44,6 +46,18 @@ const services = [
     title: "Lentilles de contact",
     description: "Nous pratiquons au sein du cabinet l'adaptation des patients en lentilles de contact souples, rigides cornéennes et sclérales, ainsi qu'en lentilles d'orthokératologie. Nous proposons à chaque patient une solution sur mesure et adaptée en fonction de son défaut de vision. Nous expliquons ensuite au patient comment manipuler et entretenir ses lentilles afin d'assurer un port confortable et sécurisé.",
     image: serviceLenses,
+  },
+  {
+    icon: Scissors,
+    title: "Chirurgie Esthétique du Regard",
+    description: "La chirurgie plastique et reconstructrice de l'orbite et des paupières permet de corriger les défauts esthétiques et fonctionnels de la région périoculaire. Qu'il s'agisse de paupières tombantes (ptosis), de poches sous les yeux, ou de rides périoculaires, nous proposons des solutions chirurgicales personnalisées pour rajeunir le regard tout en préservant la fonction oculaire. Chaque intervention est adaptée aux besoins spécifiques du patient pour un résultat naturel et harmonieux.",
+    image: serviceAesthetic,
+  },
+  {
+    icon: Car,
+    title: "Visite Médicale du Permis de Conduire",
+    description: "Dr Kenza Tazi est agréée pour effectuer la visite médicale d'aptitude à la conduite. L'examen comprend un bilan ophtalmologique complet incluant l'acuité visuelle, le champ visuel, la vision des couleurs et la sensibilité aux contrastes. Le certificat médical est délivré immédiatement après l'examen. Cette visite est obligatoire pour l'obtention ou le renouvellement du permis de conduire selon la réglementation en vigueur.",
+    image: serviceDrivingLicense,
   },
 ];
 
