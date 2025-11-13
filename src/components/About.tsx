@@ -23,16 +23,7 @@ const About = () => {
             </h2>
 
             <p className="text-lg text-muted-foreground">
-              Notre cabinet moderne allie expertise médicale et équipements de dernière 
-              génération dans un environnement chaleureux et accueillant. Chaque patient 
-              bénéficie d'une attention personnalisée et de soins oculaires de haute qualité, 
-              du diagnostic à la chirurgie.
-            </p>
-
-            <p className="text-lg text-muted-foreground">
-              Dotés des technologies les plus avancées et d'une décoration soignée, 
-              nos espaces de consultation sont conçus pour votre confort et votre 
-              sérénité, tout en garantissant des examens précis et des résultats fiables.
+              Avec plusieurs années d'expérience, notre cabinet combine expertise médicale et technologie de pointe pour offrir des soins oculaires de qualité. Notre savoir est dédié à préserver et améliorer votre vision.
             </p>
 
             <div className="grid grid-cols-2 gap-6 py-6">
