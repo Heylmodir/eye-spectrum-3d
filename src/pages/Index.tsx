@@ -20,16 +20,16 @@ const Index = () => {
         <Hero3D />
       </section>
       
-      {/* Cabinet photos - visual showcase right after hero */}
-      <AnimatedSection animation="fade-up" delay={0}>
-        <ImageCarousel />
-      </AnimatedSection>
-      
       {/* About - establish credibility */}
       <AnimatedSection animation="fade-up" delay={0}>
         <section id="about">
           <About />
         </section>
+      </AnimatedSection>
+      
+      {/* Cabinet photos - visual showcase after about */}
+      <AnimatedSection animation="fade-up" delay={0}>
+        <ImageCarousel />
       </AnimatedSection>
       
       {/* Services - show what you offer */}
