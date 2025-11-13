@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { format } from "date-fns";
@@ -102,6 +103,7 @@ type AppointmentFormValues = z.infer<typeof appointmentSchema>;
 
 const AppointmentBookingForm = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<AppointmentFormValues>({
@@ -128,19 +130,14 @@ const AppointmentBookingForm = () => {
       // Here you would typically send this to your backend/email service
       console.log("Appointment booking:", appointmentData);
 
-      toast({
-        title: "Demande de rendez-vous envoyée !",
-        description: `Nous vous contacterons bientôt pour confirmer votre rendez-vous du ${appointmentData.date} à ${data.time}.`,
-      });
-
-      form.reset();
+      // Redirect to thank you page
+      navigate("/merci");
     } catch (error) {
       toast({
         title: "Erreur",
         description: "Une erreur est survenue. Veuillez réessayer.",
         variant: "destructive",
       });
-    } finally {
       setIsSubmitting(false);
     }
   };
