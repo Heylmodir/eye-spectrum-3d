@@ -58,7 +58,7 @@ const Navigation = () => {
           : "bg-gradient-to-b from-background/40 via-background/20 to-transparent backdrop-blur-sm"
       }`}
     >
-      <nav className="container mx-auto px-4 py-2 md:py-2.5">
+      <nav className="container mx-auto px-4 py-1.5 md:py-2">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <button
@@ -69,7 +69,7 @@ const Navigation = () => {
               src={logo} 
               alt="Cabinet d'Ophtalmologie Logo" 
               eager
-              className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain"
+              className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain"
             />
           </button>
 
@@ -81,7 +81,7 @@ const Navigation = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => handleMenuClick(item)}
-                className="text-[11px] font-medium text-foreground hover:text-medical-red hover:bg-medical-red/10 transition-colors px-1.5 py-0.5 h-7"
+                className="text-[10px] font-medium text-foreground hover:text-medical-red hover:bg-medical-red/10 transition-colors px-1.5 py-0.5 h-6"
               >
                 {item.label}
               </Button>
@@ -90,14 +90,14 @@ const Navigation = () => {
               href="https://www.instagram.com/dr.ktazi"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-1.5"
+              className="ml-1"
             >
               <Button
                 variant="outline"
                 size="sm"
-                className="border-medical-red text-medical-red hover:bg-medical-red hover:text-white transition-colors h-7 w-7 p-0"
+                className="border-medical-red text-medical-red hover:bg-medical-red hover:text-white transition-colors h-6 w-6 p-0"
               >
-                <Instagram className="h-3 w-3" />
+                <Instagram className="h-2.5 w-2.5" />
               </Button>
             </a>
           </div>
