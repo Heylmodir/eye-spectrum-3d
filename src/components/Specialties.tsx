@@ -38,11 +38,8 @@ const Specialties = () => {
                 Excellence en Chirurgie Plastique et Reconstructrice
               </h3>
               <div className="prose prose-lg max-w-none">
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  La chirurgie plastique reconstructrice et esthétique de l'orbite et des paupières permet de corriger les défauts visibles du tiers supérieur du visage, qui peuvent résulter du vieillissement, d'une malformation congénitale, d'un traumatisme facial ou encore d'un épisode carcinologique.
-                </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Les options thérapeutiques sont nombreuses et variables, allant des injections de la face à la blépharoplastie chirurgicale. Une consultation spécialisée, avec un interrogatoire minutieux et un examen complet, permet de proposer la solution la plus adaptée à chaque patient.
+                  La chirurgie plastique reconstructrice et esthétique de l'orbite et des paupières permet de corriger les défauts visibles du tiers supérieur du visage, qui peuvent résulter du vieillissement, d'une malformation congénitale, d'un traumatisme facial ou encore d'un épisode carcinologique. Les options thérapeutiques sont nombreuses et variables, allant des injections de la face à la blépharoplastie chirurgicale. Une consultation spécialisée, avec un interrogatoire minutieux et un examen complet, permet de proposer la solution la plus adaptée à chaque patient.
                 </p>
               </div>
             </CardContent>
