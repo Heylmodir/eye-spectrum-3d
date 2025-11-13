@@ -6,59 +6,84 @@ const eyeIcons = [Eye, Sparkles, Scan, Focus, Camera, Glasses];
 
 const testimonials = [
   {
-    name: "Fatima Benali",
-    age: 45,
-    treatment: "Chirurgie de la cataracte",
+    name: "Youssef ID",
+    badge: "Local Guide · 17 avis",
     rating: 5,
-    initials: "FB",
-    review: "Après ma chirurgie de la cataracte, je vois à nouveau clairement ! Dr Tazi a été exceptionnelle, très professionnelle et rassurante. L'équipe est merveilleuse et les installations sont ultra-modernes. Je recommande vivement !",
-    date: "Il y a 2 mois"
-  },
-  {
-    name: "Ahmed Idrissi",
-    age: 32,
-    treatment: "Chirurgie réfractive au laser",
-    rating: 5,
-    initials: "AI",
-    review: "Plus besoin de lunettes ! La chirurgie réfractive a changé ma vie. Dr Tazi m'a expliqué chaque étape avec patience. Le résultat est parfait, ma vision est impeccable. Merci infiniment !",
+    initials: "YI",
+    review: "Super consultation avec Dr Kenza TAZI ! Très ponctuelle, à l'écoute et vraiment compétente. Le cabinet est propre et bien organisé. Je recommande sans hésitation !",
     date: "Il y a 3 mois"
   },
   {
-    name: "Samira El Amrani",
-    age: 58,
-    treatment: "Traitement du glaucome",
+    name: "Hajar Mestari",
+    badge: "5 avis",
     rating: 5,
-    initials: "SE",
-    review: "Grâce au suivi régulier et au traitement du Dr Tazi, mon glaucome est bien contrôlé. Elle est très attentive et prend le temps d'écouter ses patients. Je me sens en confiance.",
-    date: "Il y a 1 mois"
+    initials: "HM",
+    review: "Docteur tazi est à l'écoute, patiente et très professionnelle. Son cabinet est neuf et très bien équipé. J'ai beaucoup apprécié sa disponibilité et son expertise.",
+    date: "Il y a 7 mois"
   },
   {
-    name: "Youssef Tahiri",
-    age: 8,
-    treatment: "Ophtalmologie pédiatrique",
+    name: "Mohamed Ghali Tazi",
+    badge: "6 avis",
     rating: 5,
-    initials: "YT",
-    review: "Mon fils avait peur des médecins, mais Dr Tazi a su le mettre à l'aise immédiatement. Elle est patiente, douce et très compétente avec les enfants. Son strabisme est maintenant corrigé !",
-    date: "Il y a 4 mois",
-    parent: true
-  },
-  {
-    name: "Leila Benjelloun",
-    age: 52,
-    treatment: "Chirurgie esthétique du regard",
-    rating: 5,
-    initials: "LB",
-    review: "Résultat naturel et élégant ! Dr Tazi a un véritable sens esthétique. La blépharoplastie a rajeuni mon regard sans excès. Je suis ravie du résultat et de l'accompagnement post-opératoire.",
+    initials: "MG",
+    review: "J'ai effectué une consultation chez le docteur Tazi et je ne peux que la recommander. Elle a été minutieuse, professionnelle et très compétente.",
     date: "Il y a 5 mois"
   },
   {
-    name: "Karim Aziz",
-    age: 28,
-    treatment: "Adaptation lentilles de contact",
+    name: "Said Ziad",
+    badge: "2 avis",
     rating: 5,
-    initials: "KA",
-    review: "L'adaptation de mes lentilles sclérales s'est parfaitement déroulée. Dr Tazi m'a appris toutes les bonnes pratiques d'entretien. Le confort est exceptionnel !",
-    date: "Il y a 6 semaines"
+    initials: "SZ",
+    review: "Vraiment c'est très réussi, docteur tazi été vraiment professionnelle, compétente et prend tout son temps pour diagnostiquer le cas avec précision.",
+    date: "Il y a 5 mois"
+  },
+  {
+    name: "Mehdi Berrada",
+    badge: "7 avis",
+    rating: 5,
+    initials: "MB",
+    review: "Super ophtalmo sur Rabat, vraiment rien à redire. Tout s'est bien passé du début à la fin : prise en charge rapide, médecin à l'écoute, très professionnelle.",
+    date: "Il y a 3 mois"
+  },
+  {
+    name: "Jean-Baptiste PERE",
+    badge: "5 avis",
+    rating: 5,
+    initials: "JP",
+    review: "Superbe cabinet propre et accueillant. Je recommande vivement. L'équipement est moderne et l'atmosphère est très professionnelle.",
+    date: "Il y a 7 mois"
+  },
+  {
+    name: "Meriem Daoudi",
+    badge: "5 avis",
+    rating: 5,
+    initials: "MD",
+    review: "Excellent accueil, Dr Tazi a fait preuve de beaucoup de professionnalisme et de patience lors de ma consultation. Une vraie experte dans son domaine.",
+    date: "Il y a 8 mois"
+  },
+  {
+    name: "Ghada Loukili Aouali",
+    badge: "2 avis",
+    rating: 5,
+    initials: "GL",
+    review: "L'accueil est chaleureux et l'atmosphère du cabinet est particulièrement apaisante. Dr Tazi est très compétente et professionnelle, je la recommande.",
+    date: "Il y a 10 mois"
+  },
+  {
+    name: "Taha Mhader",
+    badge: "2 avis",
+    rating: 5,
+    initials: "TM",
+    review: "Je recommande le docteur Tazi de vive voix. Elle a été très consciencieuse et appliquée, a pris son temps. Le cabinet est très agréable.",
+    date: "Il y a 5 mois"
+  },
+  {
+    name: "Zineb TAZI",
+    badge: "3 avis",
+    rating: 5,
+    initials: "ZT",
+    review: "Excellent cabinet d'ophtalmologie, accueil sympathique et médecin très professionnelle. Les locaux sont neufs et très bien équipés. La qualité des soins est remarquable.",
+    date: "Il y a 9 mois"
   }
 ];
 
@@ -108,7 +133,10 @@ const Testimonials = () => {
               animation="fade-up"
               delay={index * 100}
             >
-              <Card className="relative h-full overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 group border-2 border-transparent hover:border-medical-red/30">
+              <Card className="relative h-full overflow-hidden hover:shadow-2xl hover:shadow-medical-red/30 transition-all duration-500 hover:-translate-y-3 group border-2 border-medical-red/40 hover:border-medical-red">
+                {/* Decorative corner elements */}
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-medical-red/20 to-transparent rounded-bl-full" />
+                <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-medical-red/20 to-transparent rounded-tr-full" />
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-medical-red/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
@@ -137,7 +165,7 @@ const Testimonials = () => {
                         {testimonial.name}
                       </h3>
                       <p className="text-sm text-muted-foreground">
-                        {testimonial.age} ans {testimonial.parent && "(Parent)"}
+                        {testimonial.badge}
                       </p>
                       <div className="flex gap-0.5 mt-2">
                         {[...Array(testimonial.rating)].map((_, i) => (
@@ -151,12 +179,6 @@ const Testimonials = () => {
                     </div>
                   </div>
 
-                  {/* Treatment badge */}
-                  <div className="mb-6">
-                    <span className="inline-block px-4 py-2 bg-gradient-to-r from-medical-red/10 to-medical-red/20 text-medical-red rounded-full text-xs font-semibold border border-medical-red/20 group-hover:border-medical-red/40 transition-colors">
-                      {testimonial.treatment}
-                    </span>
-                  </div>
 
                   {/* Review text with quote marks */}
                   <div className="relative mb-6 flex-1">
