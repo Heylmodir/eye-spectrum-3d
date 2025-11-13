@@ -91,41 +91,12 @@ const LocationMap = () => {
               
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-medical-red/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            </div>
-
-            {/* Address Card Overlay */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 w-[90%] max-w-md">
-              <div className="bg-background/95 backdrop-blur-md border-2 border-medical-red rounded-xl p-6 shadow-2xl">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-lg mb-2 text-foreground">Cabinet Dr Kenza Tazi</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Ophtalmologue<br />
-                      Casablanca, Maroc
-                    </p>
-                    <a
-                      href="https://maps.app.goo.gl/sRACGj8onGzdRYm26"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 mt-3 text-primary hover:text-primary/80 transition-colors text-sm font-semibold"
-                    >
-                      Ouvrir dans Google Maps
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
 
-            {/* Floating red glow effects */}
-            <div className="absolute -bottom-12 -right-12 w-72 h-72 bg-medical-red/20 rounded-full blur-3xl -z-10 animate-pulse-soft" style={{ animationDelay: "0.5s" }} />
-            <div className="absolute -top-12 -left-12 w-72 h-72 bg-medical-red/15 rounded-full blur-3xl -z-10 animate-pulse-soft" style={{ animationDelay: "1.5s" }} />
-          </div>
+          {/* Floating red glow effects */}
+          <div className="absolute -bottom-12 -right-12 w-72 h-72 bg-medical-red/20 rounded-full blur-3xl -z-10 animate-pulse-soft" style={{ animationDelay: "0.5s" }} />
+          <div className="absolute -top-12 -left-12 w-72 h-72 bg-medical-red/15 rounded-full blur-3xl -z-10 animate-pulse-soft" style={{ animationDelay: "1.5s" }} />
         </div>
       </div>
     </section>
