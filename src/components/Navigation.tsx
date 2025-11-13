@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo-new.png";
 import AppointmentDialog from "@/components/AppointmentDialog";
 
 const Navigation = () => {
@@ -66,13 +66,9 @@ const Navigation = () => {
           >
             <img 
               src={logo} 
-              alt="Dr Kenza Tazi Logo" 
-              className="w-14 h-14 object-contain transition-transform group-hover:scale-105"
+              alt="Cabinet d'Ophtalmologie Logo" 
+              className="w-16 h-16 object-contain transition-transform group-hover:scale-110"
             />
-            <div className="hidden md:block">
-              <h1 className="text-xl font-bold text-foreground">Dr Kenza Tazi</h1>
-              <p className="text-xs text-muted-foreground">Ophtalmologue</p>
-            </div>
           </button>
 
           {/* Desktop Menu */}

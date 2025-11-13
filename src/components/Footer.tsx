@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Instagram, Linkedin, Eye, Sparkles, MapPin, Phone, Mail, Clock } from "lucide-react";
+import logo from "@/assets/logo-new.png";
 
 const Footer = () => {
   return (
@@ -25,15 +26,14 @@ const Footer = () => {
 
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
-          {/* Logo and description with Eye Icon */}
+          {/* Logo */}
           <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-medical-red to-medical-red-dark rounded-full flex items-center justify-center shadow-lg shadow-medical-red/30 group-hover:shadow-medical-red/50 transition-all">
-                <Eye className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-medical-red to-primary bg-clip-text text-transparent">
-                Dr Kenza Tazi
-              </h3>
+            <div className="flex items-center justify-center md:justify-start">
+              <img 
+                src={logo} 
+                alt="Cabinet d'Ophtalmologie Logo" 
+                className="w-20 h-20 object-contain transition-transform hover:scale-110"
+              />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Cabinet d'ophtalmologie spécialisé en chirurgie et soins oculaires.
@@ -156,12 +156,14 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Decorative Eye Divider */}
+        {/* Decorative Logo Divider */}
         <div className="flex items-center justify-center mb-8 gap-4">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-medical-red/30 to-medical-red/30" />
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-medical-red to-medical-red-dark flex items-center justify-center shadow-lg shadow-medical-red/30">
-            <Eye className="w-5 h-5 text-white" />
-          </div>
+          <img 
+            src={logo} 
+            alt="Logo" 
+            className="w-10 h-10 object-contain"
+          />
           <div className="flex-1 h-px bg-gradient-to-l from-transparent via-medical-red/30 to-medical-red/30" />
         </div>
 
@@ -169,7 +171,7 @@ const Footer = () => {
         <div className="pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground flex items-center gap-2">
-              © 2024 Dr Kenza Tazi. Tous droits réservés.
+              © 2024 Cabinet d'Ophtalmologie. Tous droits réservés.
               <Sparkles className="w-4 h-4 text-medical-red animate-pulse-soft" />
             </p>
             <div className="flex gap-6 text-sm">
