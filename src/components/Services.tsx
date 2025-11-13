@@ -6,7 +6,7 @@ import serviceLaser from "@/assets/service-laser-new.jpg";
 import serviceRetina from "@/assets/service-retina-new.jpg";
 import serviceGlaucoma from "@/assets/service-glaucoma-new.jpg";
 import servicePediatric from "@/assets/service-pediatric-real.jpg";
-import serviceLenses from "@/assets/service-lenses-real.jpg";
+import serviceLenses from "@/assets/service-lenses-new.jpg";
 
 const services = [
   {
