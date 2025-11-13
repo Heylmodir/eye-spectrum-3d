@@ -62,7 +62,11 @@ const Navigation = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection("accueil")}
-            className="flex items-center gap-3 group"
+            className={`flex items-center gap-3 group px-4 py-2 rounded-lg transition-all duration-300 ${
+              isScrolled 
+                ? "bg-background/80 backdrop-blur-sm shadow-md" 
+                : "bg-background/40 backdrop-blur-sm"
+            }`}
           >
             <img 
               src={logo} 
