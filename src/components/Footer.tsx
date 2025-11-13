@@ -32,7 +32,7 @@ const Footer = () => {
               <img 
                 src={logo} 
                 alt="Cabinet d'Ophtalmologie Logo" 
-                className="w-20 h-20 object-contain transition-transform hover:scale-110"
+                className="w-32 h-32 object-contain transition-transform hover:scale-110"
               />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -162,7 +162,7 @@ const Footer = () => {
           <img 
             src={logo} 
             alt="Logo" 
-            className="w-10 h-10 object-contain"
+            className="w-16 h-16 object-contain"
           />
           <div className="flex-1 h-px bg-gradient-to-l from-transparent via-medical-red/30 to-medical-red/30" />
         </div>
