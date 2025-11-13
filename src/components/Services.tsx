@@ -6,6 +6,7 @@ import serviceRetina from "@/assets/service-retina-new.jpg";
 import serviceGlaucoma from "@/assets/service-glaucoma-new.jpg";
 import servicePediatric from "@/assets/service-pediatric-new.jpg";
 import serviceLenses from "@/assets/service-lenses-new.jpg";
+import serviceAesthetic from "@/assets/service-aesthetic.jpg";
 
 const services = [
   {
@@ -43,6 +44,12 @@ const services = [
     title: "Lentilles de contact",
     description: "Nous pratiquons au sein du cabinet l'adaptation des patients en lentilles de contact souples, rigides cornéennes et sclérales, ainsi qu'en lentilles d'orthokératologie. Nous proposons à chaque patient une solution sur mesure et adaptée en fonction de son défaut de vision. Nous expliquons ensuite au patient comment manipuler et entretenir ses lentilles afin d'assurer un port confortable et sécurisé.",
     image: serviceLenses,
+  },
+  {
+    icon: Sparkles,
+    title: "Chirurgie Esthétique du Regard",
+    description: "La chirurgie esthétique du regard vise à corriger et embellir la région péri-oculaire. Elle comprend notamment la blépharoplastie (chirurgie des paupières) qui permet de retirer l'excès de peau et de graisse des paupières supérieures et inférieures, donnant un regard plus jeune et reposé. Ces interventions sont réalisées avec précision pour préserver la fonction oculaire tout en améliorant l'apparence esthétique.",
+    image: serviceAesthetic,
   },
 ];
 
