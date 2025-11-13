@@ -37,7 +37,7 @@ const DrivingLicenseMedical = () => {
                 </h3>
                 
                 <p className="text-lg text-muted-foreground mb-4">
-                  Dr Kenza Tazi est médecin agréé par la préfecture pour effectuer les visites médicales du permis de conduire.
+                  Dr Kenza Tazi est agréée pour effectuer la visite médicale d'aptitude à la conduite.
                 </p>
 
                 <div className="flex flex-wrap gap-4 justify-center md:justify-start">
