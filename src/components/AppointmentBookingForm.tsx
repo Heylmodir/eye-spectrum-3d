@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
-import { Calendar as CalendarIcon, Clock } from "lucide-react";
+import { Calendar as CalendarIcon, Clock, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -144,6 +144,56 @@ const AppointmentBookingForm = () => {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleWhatsAppBooking = () => {
+    const values = form.getValues();
+    
+    // Validate required fields
+    if (!values.firstName || !values.lastName || !values.phone || !values.date || !values.time || !values.service) {
+      toast({
+        title: "Champs requis manquants",
+        description: "Veuillez remplir tous les champs obligatoires avant de contacter via WhatsApp",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Format the message with appointment details
+    const formattedDate = format(values.date, "PPP", { locale: fr });
+    const message = `Bonjour Dr Kenza Tazi,
+
+Je souhaite prendre rendez-vous pour une consultation.
+
+📋 Informations du patient:
+Nom: ${values.lastName}
+Prénom: ${values.firstName}
+Email: ${values.email || "Non fourni"}
+Téléphone: ${values.phone}
+
+📅 Rendez-vous souhaité:
+Date: ${formattedDate}
+Heure: ${values.time}
+Service: ${values.service}
+
+${values.notes ? `📝 Notes:\n${values.notes}` : ""}
+
+Merci de me confirmer la disponibilité.`;
+
+    // WhatsApp phone number (format: country code + number without + or spaces)
+    // Using the clinic's phone number: 0664474135
+    const whatsappNumber = "212664474135"; // Morocco country code (212) + number
+    
+    // Create WhatsApp URL with pre-filled message
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, "_blank");
+    
+    toast({
+      title: "Ouverture de WhatsApp",
+      description: "Vous allez être redirigé vers WhatsApp avec les détails de votre rendez-vous",
+    });
   };
 
   return (
@@ -356,14 +406,30 @@ const AppointmentBookingForm = () => {
               )}
             />
 
-            <Button
-              type="submit"
-              size="lg"
-              disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-medical-red to-medical-red-dark hover:from-medical-red-dark hover:to-medical-red text-white text-lg py-6 shadow-lg hover:shadow-xl transition-all"
-            >
-              {isSubmitting ? "Envoi en cours..." : "Confirmer le rendez-vous"}
-            </Button>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Button
+                type="submit"
+                size="lg"
+                disabled={isSubmitting}
+                className="bg-gradient-to-r from-medical-red to-medical-red-dark hover:from-medical-red-dark hover:to-medical-red text-white text-lg py-6 shadow-lg hover:shadow-xl transition-all"
+              >
+                {isSubmitting ? "Envoi en cours..." : "Envoyer la demande"}
+              </Button>
+
+              <Button
+                type="button"
+                size="lg"
+                onClick={handleWhatsAppBooking}
+                className="bg-[#25D366] hover:bg-[#20BA5A] text-white text-lg py-6 shadow-lg hover:shadow-xl transition-all"
+              >
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Réserver via WhatsApp
+              </Button>
+            </div>
+
+            <p className="text-xs text-center text-muted-foreground">
+              Vous pouvez soit envoyer une demande via le formulaire, soit contacter directement le cabinet via WhatsApp
+            </p>
           </form>
         </Form>
       </CardContent>
