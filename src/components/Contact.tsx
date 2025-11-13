@@ -1,15 +1,8 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import AppointmentBookingForm from "./AppointmentBookingForm";
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-  };
-
   return (
     <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -77,85 +70,9 @@ const Contact = () => {
             </Card>
           </div>
 
-          {/* Contact Form */}
+          {/* Appointment Booking Form */}
           <div className="lg:col-span-2">
-            <Card className="shadow-xl">
-              <CardContent className="p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Nom Complet *
-                      </label>
-                      <Input
-                        id="name"
-                        placeholder="Jean Dupont"
-                        required
-                        className="border-border focus:border-primary"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email *
-                      </label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="jean.dupont@email.com"
-                        required
-                        className="border-border focus:border-primary"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="phone" className="text-sm font-medium">
-                        Téléphone
-                      </label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        placeholder="+33 6 12 34 56 78"
-                        className="border-border focus:border-primary"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="subject" className="text-sm font-medium">
-                        Sujet *
-                      </label>
-                      <Input
-                        id="subject"
-                        placeholder="Prise de rendez-vous"
-                        required
-                        className="border-border focus:border-primary"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Message *
-                    </label>
-                    <Textarea
-                      id="message"
-                      placeholder="Décrivez votre demande ou vos questions..."
-                      rows={6}
-                      required
-                      className="border-border focus:border-primary resize-none"
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-6"
-                  >
-                    Envoyer le Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            <AppointmentBookingForm />
           </div>
         </div>
       </div>
