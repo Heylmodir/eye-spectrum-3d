@@ -47,8 +47,8 @@ const services = [
   },
   {
     icon: Sparkles,
-    title: "Chirurgie Esthétique du Regard",
-    description: "La chirurgie esthétique du regard vise à corriger et embellir la région péri-oculaire. Elle comprend notamment la blépharoplastie (chirurgie des paupières) qui permet de retirer l'excès de peau et de graisse des paupières supérieures et inférieures, donnant un regard plus jeune et reposé. Ces interventions sont réalisées avec précision pour préserver la fonction oculaire tout en améliorant l'apparence esthétique.",
+    title: "Excellence en Chirurgie Plastique et Reconstructrice",
+    description: "La chirurgie plastique reconstructrice et esthétique de l'orbite et des paupières permet de corriger les défauts visibles du tiers supérieur du visage, qui peuvent résulter du vieillissement, d'une malformation congénitale, d'un traumatisme facial ou encore d'un épisode carcinologique. Les options thérapeutiques sont nombreuses et variables, allant des injections de la face à la blépharoplastie chirurgicale. Une consultation spécialisée, avec un interrogatoire minutieux et un examen complet, permet de proposer la solution la plus adaptée à chaque patient.",
     image: serviceAesthetic,
   },
 ];
