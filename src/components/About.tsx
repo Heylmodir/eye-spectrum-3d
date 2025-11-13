@@ -81,7 +81,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-medical-red/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 text-white z-20">
                   <h3 className="text-2xl font-bold mb-2 drop-shadow-lg">Dr Kenza Tazi</h3>
-                  <p className="text-sm drop-shadow-md">Spécialiste en chirurgie oculaire et soins avancés</p>
+                  <p className="text-sm drop-shadow-md">Spécialiste en chirurgie oculaire et maladies des yeux.</p>
                 </div>
                 {/* Corner decorations */}
                 <div className="absolute top-0 left-0 w-12 h-12 border-t-4 border-l-4 border-medical-red-light" />
