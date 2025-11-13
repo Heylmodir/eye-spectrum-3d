@@ -442,20 +442,6 @@ const Hero3D = () => {
               </Button>
             </div>
 
-            <div className="flex flex-wrap gap-8 justify-center lg:justify-start pt-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">15+</div>
-                <div className="text-sm text-muted-foreground">Années d'Expérience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">5000+</div>
-                <div className="text-sm text-muted-foreground">Patients Satisfaits</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">100%</div>
-                <div className="text-sm text-muted-foreground">Équipement Moderne</div>
-              </div>
-            </div>
           </div>
 
           {/* Right content - 3D Canvas with optical frame */}
