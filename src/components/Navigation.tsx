@@ -62,16 +62,12 @@ const Navigation = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection("accueil")}
-            className={`flex items-center gap-3 group px-4 py-2 rounded-lg transition-all duration-300 ${
-              isScrolled 
-                ? "bg-background/80 backdrop-blur-sm shadow-md" 
-                : "bg-background/40 backdrop-blur-sm"
-            }`}
+            className="flex items-center gap-3 group"
           >
             <img 
               src={logo} 
               alt="Cabinet d'Ophtalmologie Logo" 
-              className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain"
+              className="h-12 sm:h-14 md:h-16 lg:h-18 w-auto object-contain"
             />
           </button>
 
@@ -83,7 +79,7 @@ const Navigation = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => handleMenuClick(item)}
-                className="text-sm font-medium text-foreground hover:text-medical-red hover:bg-medical-red/10 transition-colors"
+                className="text-xs font-medium text-foreground hover:text-medical-red hover:bg-medical-red/10 transition-colors px-2 py-1 h-8"
               >
                 {item.label}
               </Button>
@@ -97,9 +93,9 @@ const Navigation = () => {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-medical-red text-medical-red hover:bg-medical-red hover:text-white transition-colors"
+                className="border-medical-red text-medical-red hover:bg-medical-red hover:text-white transition-colors h-8 w-8 p-0"
               >
-                <Instagram className="h-4 w-4" />
+                <Instagram className="h-3.5 w-3.5" />
               </Button>
             </a>
           </div>
