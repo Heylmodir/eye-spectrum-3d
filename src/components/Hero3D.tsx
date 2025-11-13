@@ -32,43 +32,98 @@ const Hero3D = () => {
     };
     canvas.addEventListener("mousemove", handleMouseMove);
 
-    // Draw 3D eye-like sphere
+    // Draw 3D eye-like sphere with enhanced depth
     const drawEye = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;
-      const radius = Math.min(canvas.width, canvas.height) * 0.25;
+      const radius = Math.min(canvas.width, canvas.height) * 0.28;
 
       // Apply rotation and mouse interaction
       rotation += 0.005;
-      const tiltX = mouseY * 0.2;
-      const tiltY = mouseX * 0.2;
+      const tiltX = mouseY * 0.3;
+      const tiltY = mouseX * 0.3;
 
-      // Outer sphere (white of the eye)
-      const gradient1 = ctx.createRadialGradient(
-        centerX - 30,
-        centerY - 30,
-        0,
-        centerX,
-        centerY,
-        radius
+      // Shadow behind the eye for depth
+      ctx.save();
+      ctx.filter = "blur(20px)";
+      ctx.beginPath();
+      ctx.arc(centerX + 8, centerY + 12, radius * 1.05, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
+      ctx.fill();
+      ctx.restore();
+
+      // Outer sphere (sclera - white of the eye) with 3D shading
+      const scleraGradient = ctx.createRadialGradient(
+        centerX - radius * 0.3 + tiltY * 15,
+        centerY - radius * 0.3 + tiltX * 15,
+        radius * 0.2,
+        centerX + tiltY * 20,
+        centerY + tiltX * 20,
+        radius * 1.2
       );
-      gradient1.addColorStop(0, "#ffffff");
-      gradient1.addColorStop(0.7, "#f5f5f5");
-      gradient1.addColorStop(1, "#e5e5e5");
+      scleraGradient.addColorStop(0, "#ffffff");
+      scleraGradient.addColorStop(0.5, "#f8f8f8");
+      scleraGradient.addColorStop(0.85, "#e8e8e8");
+      scleraGradient.addColorStop(1, "#d0d0d0");
 
       ctx.beginPath();
       ctx.arc(centerX + tiltY * 20, centerY + tiltX * 20, radius, 0, Math.PI * 2);
-      ctx.fillStyle = gradient1;
+      ctx.fillStyle = scleraGradient;
       ctx.fill();
-      ctx.strokeStyle = "rgba(220, 38, 38, 0.1)";
-      ctx.lineWidth = 2;
-      ctx.stroke();
+      
+      // Subtle blood vessels
+      ctx.save();
+      ctx.globalAlpha = 0.15;
+      for (let i = 0; i < 12; i++) {
+        const angle = (Math.PI * 2 * i) / 12 + rotation * 0.2;
+        const startX = centerX + Math.cos(angle) * radius * 0.3;
+        const startY = centerY + Math.sin(angle) * radius * 0.3;
+        const endX = centerX + Math.cos(angle) * radius * 0.9;
+        const endY = centerY + Math.sin(angle) * radius * 0.9;
+        
+        ctx.strokeStyle = "#dc2626";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(startX, startY);
+        ctx.quadraticCurveTo(
+          centerX + Math.cos(angle + 0.5) * radius * 0.6,
+          centerY + Math.sin(angle + 0.5) * radius * 0.6,
+          endX,
+          endY
+        );
+        ctx.stroke();
+      }
+      ctx.restore();
 
-      // Iris (red medical theme)
-      const irisRadius = radius * 0.4;
-      const gradient2 = ctx.createRadialGradient(
+      // Limbus (border around iris) for depth
+      const limbusGradient = ctx.createRadialGradient(
+        centerX + tiltY * 30,
+        centerY + tiltX * 30,
+        radius * 0.42,
+        centerX + tiltY * 30,
+        centerY + tiltX * 30,
+        radius * 0.52
+      );
+      limbusGradient.addColorStop(0, "rgba(80, 80, 80, 0)");
+      limbusGradient.addColorStop(0.5, "rgba(60, 60, 60, 0.3)");
+      limbusGradient.addColorStop(1, "rgba(40, 40, 40, 0.1)");
+
+      ctx.beginPath();
+      ctx.arc(
+        centerX + tiltY * 30,
+        centerY + tiltX * 30,
+        radius * 0.52,
+        0,
+        Math.PI * 2
+      );
+      ctx.fillStyle = limbusGradient;
+      ctx.fill();
+
+      // Iris with enhanced detail and texture
+      const irisRadius = radius * 0.42;
+      const irisGradient = ctx.createRadialGradient(
         centerX + tiltY * 30,
         centerY + tiltX * 30,
         0,
@@ -76,9 +131,11 @@ const Hero3D = () => {
         centerY + tiltX * 30,
         irisRadius
       );
-      gradient2.addColorStop(0, "#dc2626");
-      gradient2.addColorStop(0.5, "#ef4444");
-      gradient2.addColorStop(1, "#b91c1c");
+      irisGradient.addColorStop(0, "#ff6b6b");
+      irisGradient.addColorStop(0.2, "#ef4444");
+      irisGradient.addColorStop(0.4, "#dc2626");
+      irisGradient.addColorStop(0.7, "#b91c1c");
+      irisGradient.addColorStop(1, "#7f1d1d");
 
       ctx.beginPath();
       ctx.arc(
@@ -88,12 +145,45 @@ const Hero3D = () => {
         0,
         Math.PI * 2
       );
-      ctx.fillStyle = gradient2;
+      ctx.fillStyle = irisGradient;
       ctx.fill();
 
-      // Pupil (dark center)
-      const pupilRadius = irisRadius * 0.4;
-      const gradient3 = ctx.createRadialGradient(
+      // Iris texture pattern (radial lines)
+      ctx.save();
+      ctx.globalAlpha = 0.3;
+      for (let i = 0; i < 36; i++) {
+        const angle = (Math.PI * 2 * i) / 36;
+        ctx.strokeStyle = i % 2 === 0 ? "#7f1d1d" : "#991b1b";
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(
+          centerX + tiltY * 30 + Math.cos(angle) * irisRadius * 0.2,
+          centerY + tiltX * 30 + Math.sin(angle) * irisRadius * 0.2
+        );
+        ctx.lineTo(
+          centerX + tiltY * 30 + Math.cos(angle) * irisRadius * 0.95,
+          centerY + tiltX * 30 + Math.sin(angle) * irisRadius * 0.95
+        );
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      // Inner iris ring for depth
+      ctx.beginPath();
+      ctx.arc(
+        centerX + tiltY * 30,
+        centerY + tiltX * 30,
+        irisRadius * 0.3,
+        0,
+        Math.PI * 2
+      );
+      ctx.strokeStyle = "rgba(127, 29, 29, 0.5)";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Pupil with depth
+      const pupilRadius = irisRadius * 0.45;
+      const pupilGradient = ctx.createRadialGradient(
         centerX + tiltY * 30,
         centerY + tiltX * 30,
         0,
@@ -101,8 +191,9 @@ const Hero3D = () => {
         centerY + tiltX * 30,
         pupilRadius
       );
-      gradient3.addColorStop(0, "#1a1a1a");
-      gradient3.addColorStop(1, "#000000");
+      pupilGradient.addColorStop(0, "#000000");
+      pupilGradient.addColorStop(0.7, "#0a0a0a");
+      pupilGradient.addColorStop(1, "#1a1a1a");
 
       ctx.beginPath();
       ctx.arc(
@@ -112,33 +203,90 @@ const Hero3D = () => {
         0,
         Math.PI * 2
       );
-      ctx.fillStyle = gradient3;
+      ctx.fillStyle = pupilGradient;
       ctx.fill();
 
-      // Light reflection
+      // Main light reflection (catch light)
+      const reflectionGradient = ctx.createRadialGradient(
+        centerX + tiltY * 30 - pupilRadius * 0.4,
+        centerY + tiltX * 30 - pupilRadius * 0.4,
+        0,
+        centerX + tiltY * 30 - pupilRadius * 0.4,
+        centerY + tiltX * 30 - pupilRadius * 0.4,
+        pupilRadius * 0.45
+      );
+      reflectionGradient.addColorStop(0, "rgba(255, 255, 255, 0.9)");
+      reflectionGradient.addColorStop(0.5, "rgba(255, 255, 255, 0.4)");
+      reflectionGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+
       ctx.beginPath();
       ctx.arc(
-        centerX + tiltY * 30 - pupilRadius * 0.3,
-        centerY + tiltX * 30 - pupilRadius * 0.3,
-        pupilRadius * 0.3,
+        centerX + tiltY * 30 - pupilRadius * 0.4,
+        centerY + tiltX * 30 - pupilRadius * 0.4,
+        pupilRadius * 0.45,
         0,
         Math.PI * 2
       );
-      ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+      ctx.fillStyle = reflectionGradient;
       ctx.fill();
 
-      // Orbiting particles
-      for (let i = 0; i < 8; i++) {
-        const angle = (rotation + (i * Math.PI * 2) / 8) * 2;
-        const orbitRadius = radius * 1.3;
+      // Secondary smaller reflection
+      ctx.beginPath();
+      ctx.arc(
+        centerX + tiltY * 30 + pupilRadius * 0.3,
+        centerY + tiltX * 30 + pupilRadius * 0.2,
+        pupilRadius * 0.15,
+        0,
+        Math.PI * 2
+      );
+      ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
+      ctx.fill();
+
+      // Orbiting particles with depth
+      for (let i = 0; i < 12; i++) {
+        const angle = (rotation + (i * Math.PI * 2) / 12) * 1.5;
+        const orbitRadius = radius * 1.4;
         const x = centerX + Math.cos(angle) * orbitRadius + tiltY * 10;
         const y = centerY + Math.sin(angle) * orbitRadius + tiltX * 10;
+        const size = 2 + Math.sin(rotation * 2 + i) * 1.5;
+        
+        // Particle shadow
+        ctx.beginPath();
+        ctx.arc(x + 2, y + 2, size, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+        ctx.fill();
+        
+        // Particle
+        const particleGradient = ctx.createRadialGradient(x, y, 0, x, y, size);
+        particleGradient.addColorStop(0, `rgba(239, 68, 68, ${0.8 + Math.sin(rotation * 3 + i) * 0.2})`);
+        particleGradient.addColorStop(1, `rgba(220, 38, 38, ${0.3 + Math.sin(rotation * 3 + i) * 0.2})`);
         
         ctx.beginPath();
-        ctx.arc(x, y, 3, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(220, 38, 38, ${0.3 + Math.sin(rotation * 3 + i) * 0.2})`;
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fillStyle = particleGradient;
         ctx.fill();
       }
+
+      // Outer glow effect
+      ctx.save();
+      ctx.globalCompositeOperation = "screen";
+      const glowGradient = ctx.createRadialGradient(
+        centerX + tiltY * 20,
+        centerY + tiltX * 20,
+        radius * 0.8,
+        centerX + tiltY * 20,
+        centerY + tiltX * 20,
+        radius * 1.2
+      );
+      glowGradient.addColorStop(0, "rgba(220, 38, 38, 0)");
+      glowGradient.addColorStop(0.8, "rgba(220, 38, 38, 0.05)");
+      glowGradient.addColorStop(1, "rgba(220, 38, 38, 0.15)");
+      
+      ctx.beginPath();
+      ctx.arc(centerX + tiltY * 20, centerY + tiltX * 20, radius * 1.2, 0, Math.PI * 2);
+      ctx.fillStyle = glowGradient;
+      ctx.fill();
+      ctx.restore();
     };
 
     // Animation loop
