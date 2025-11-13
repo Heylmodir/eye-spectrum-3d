@@ -4,7 +4,6 @@ import ImageCarousel from "@/components/ImageCarousel";
 import Services from "@/components/Services";
 import Specialties from "@/components/Specialties";
 import About from "@/components/About";
-import ClinicGallery from "@/components/ClinicGallery";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import HoursAndInfo from "@/components/HoursAndInfo";
@@ -38,12 +37,6 @@ const Index = () => {
       <AnimatedSection animation="fade-up" delay={0}>
         <section id="about">
           <About />
-        </section>
-      </AnimatedSection>
-      
-      <AnimatedSection animation="fade-up" delay={0}>
-        <section id="cabinet">
-          <ClinicGallery />
         </section>
       </AnimatedSection>
       
