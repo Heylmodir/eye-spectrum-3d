@@ -32,8 +32,7 @@ const Footer = () => {
               <img 
                 src={logo} 
                 alt="Cabinet d'Ophtalmologie Logo" 
-                className="h-32 md:h-36 w-auto object-contain transition-transform hover:scale-105 antialiased"
-                style={{ imageRendering: '-webkit-optimize-contrast' }}
+                className="h-32 md:h-36 w-auto object-contain"
               />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -163,8 +162,7 @@ const Footer = () => {
           <img 
             src={logo} 
             alt="Logo" 
-            className="h-16 md:h-20 w-auto object-contain antialiased"
-            style={{ imageRendering: '-webkit-optimize-contrast' }}
+            className="h-16 md:h-20 w-auto object-contain"
           />
           <div className="flex-1 h-px bg-gradient-to-l from-transparent via-medical-red/30 to-medical-red/30" />
         </div>
