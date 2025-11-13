@@ -20,7 +20,12 @@ const Index = () => {
         <Hero3D />
       </section>
       
-      {/* About early - establish credibility immediately */}
+      {/* Cabinet photos - visual showcase right after hero */}
+      <AnimatedSection animation="fade-up" delay={0}>
+        <ImageCarousel />
+      </AnimatedSection>
+      
+      {/* About - establish credibility */}
       <AnimatedSection animation="fade-up" delay={0}>
         <section id="about">
           <About />
@@ -42,11 +47,6 @@ const Index = () => {
       {/* Testimonials - social proof */}
       <AnimatedSection animation="fade-up" delay={0}>
         <Testimonials />
-      </AnimatedSection>
-      
-      {/* Cabinet photos - visual reassurance */}
-      <AnimatedSection animation="fade-up" delay={100}>
-        <ImageCarousel />
       </AnimatedSection>
       
       {/* Contact form - primary conversion point */}
