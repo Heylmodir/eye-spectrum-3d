@@ -41,6 +41,7 @@ const services = [
   "Ophtalmologie pédiatrique",
   "Lentilles de contact",
   "Chirurgie esthétique du regard",
+  "Visite Médicale du Permis",
   "Consultation générale",
 ];
 

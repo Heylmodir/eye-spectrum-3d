@@ -24,21 +24,28 @@ const LocationMap = () => {
 
         {/* Contact Info Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
-          <Card className="relative overflow-hidden hover:shadow-2xl transition-all duration-500 hover:border-medical-red/50 hover:-translate-y-2 group">
-            <div className="absolute inset-0 bg-gradient-to-br from-medical-red/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="absolute -top-12 -right-12 w-24 h-24 bg-medical-red/10 rounded-full blur-2xl group-hover:bg-medical-red/20 transition-all duration-500" />
-            <CardContent className="p-6 space-y-3 relative z-10">
-              <div className="w-12 h-12 bg-medical-red/10 rounded-lg flex items-center justify-center group-hover:bg-medical-red group-hover:scale-110 transition-all duration-300 group-hover:rotate-6">
-                <MapPin className="w-6 h-6 text-medical-red group-hover:text-white transition-colors" />
-              </div>
-              <h3 className="font-semibold text-lg group-hover:text-medical-red transition-colors">Adresse</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                Cabinet d'Ophtalmologie<br />
-                Oulad Mtaa<br />
-                Rabat Temara, Maroc
-              </p>
-            </CardContent>
-          </Card>
+          <a 
+            href={googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
+            <Card className="relative overflow-hidden hover:shadow-2xl transition-all duration-500 hover:border-medical-red/50 hover:-translate-y-2 group cursor-pointer">
+              <div className="absolute inset-0 bg-gradient-to-br from-medical-red/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute -top-12 -right-12 w-24 h-24 bg-medical-red/10 rounded-full blur-2xl group-hover:bg-medical-red/20 transition-all duration-500" />
+              <CardContent className="p-6 space-y-3 relative z-10">
+                <div className="w-12 h-12 bg-medical-red/10 rounded-lg flex items-center justify-center group-hover:bg-medical-red group-hover:scale-110 transition-all duration-300 group-hover:rotate-6">
+                  <MapPin className="w-6 h-6 text-medical-red group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="font-semibold text-lg group-hover:text-medical-red transition-colors">Adresse</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Boulevard Sahl Rhone<br />
+                  Oulad Mtaa, Temara<br />
+                  Maroc
+                </p>
+              </CardContent>
+            </Card>
+          </a>
 
           <Card className="relative overflow-hidden hover:shadow-2xl transition-all duration-500 hover:border-medical-red/50 hover:-translate-y-2 group">
             <div className="absolute inset-0 bg-gradient-to-br from-medical-red/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
