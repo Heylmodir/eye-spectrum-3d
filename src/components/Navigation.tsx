@@ -58,7 +58,7 @@ const Navigation = () => {
           : "bg-gradient-to-b from-background/40 via-background/20 to-transparent backdrop-blur-sm"
       }`}
     >
-      <nav className="container mx-auto px-4 py-5 md:py-6">
+      <nav className="container mx-auto px-4 py-3 md:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <button
