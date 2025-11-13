@@ -101,7 +101,7 @@ const Footer = () => {
               Nos Spécialités
             </h4>
             <ul className="space-y-3">
-              {["Cataracte", "Laser Réfractif", "Rétine", "Glaucome", "Pédiatrie", "Esthétique"].map((service) => (
+              {["Cataracte", "Laser Réfractif", "Rétine", "Glaucome", "Ophtalmologie pédiatrique", "Esthétique"].map((service) => (
                 <li key={service}>
                   <a href="#services" className="text-muted-foreground hover:text-medical-red transition-all duration-200 hover:translate-x-2 inline-block group">
                     <span className="relative">
