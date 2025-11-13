@@ -52,10 +52,10 @@ const Navigation = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border"
-          : "bg-transparent"
+          ? "bg-background/70 backdrop-blur-lg shadow-2xl border-b border-medical-red/20"
+          : "bg-gradient-to-b from-background/40 via-background/20 to-transparent backdrop-blur-sm"
       }`}
     >
       <nav className="container mx-auto px-4 py-4">
@@ -111,7 +111,7 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden text-foreground"
+            className="lg:hidden text-foreground hover:bg-medical-red/10 transition-all"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -120,7 +120,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 py-4 border-t border-border bg-background/95 backdrop-blur-md rounded-lg shadow-xl">
+          <div className="lg:hidden mt-4 py-4 border-t border-medical-red/20 bg-background/80 backdrop-blur-xl rounded-lg shadow-2xl animate-fade-in">
             <div className="flex flex-col gap-2">
               {menuItems.map((item) => (
                 <Button
