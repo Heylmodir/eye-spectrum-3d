@@ -40,14 +40,14 @@ const About = () => {
                 <Award className="w-8 h-8 text-primary" />
                 <h3 className="font-semibold">Certifications</h3>
                 <p className="text-sm text-muted-foreground">
-                  Équipe certifiée et accréditée
+                  Médecin hautement diplômée
                 </p>
               </div>
               <div className="space-y-2">
                 <Users className="w-8 h-8 text-primary" />
                 <h3 className="font-semibold">Expérience</h3>
                 <p className="text-sm text-muted-foreground">
-                  Plus de 5000 patients
+                  Des centaines de patients traités
                 </p>
               </div>
               <div className="space-y-2">
@@ -61,7 +61,7 @@ const About = () => {
                 <TrendingUp className="w-8 h-8 text-primary" />
                 <h3 className="font-semibold">Innovation</h3>
                 <p className="text-sm text-muted-foreground">
-                  Technologie de pointe
+                  Recherche et formation continue
                 </p>
               </div>
             </div>
