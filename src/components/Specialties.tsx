@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sparkles } from "lucide-react";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import aestheticSurgery from "@/assets/aesthetic-eye-surgery.jpg";
@@ -36,14 +36,14 @@ const Specialties = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
             </div>
             <CardContent className="p-8 md:p-12 -mt-20 relative z-10">
-              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
-                Chirurgie Plastique et Reconstructrice
-              </h3>
-              <div className="prose prose-lg max-w-none">
-                <p className="text-muted-foreground leading-relaxed">
-                  La chirurgie plastique reconstructrice et esthétique de l'orbite et des paupières permet de corriger les défauts visibles du tiers supérieur du visage, qui peuvent résulter du vieillissement, d'une malformation congénitale, d'un traumatisme facial ou encore d'un épisode carcinologique. Les options thérapeutiques sont nombreuses et variables, allant des injections de la face à la blépharoplastie chirurgicale. Une consultation spécialisée, avec un interrogatoire minutieux et un examen complet, permet de proposer la solution la plus adaptée à chaque patient.
-                </p>
-              </div>
+              <CardHeader className="p-0 mb-6">
+                <CardTitle className="text-xl">
+                  Chirurgie Plastique et Reconstructrice
+                </CardTitle>
+              </CardHeader>
+              <CardDescription className="text-base leading-relaxed">
+                La chirurgie plastique reconstructrice et esthétique de l'orbite et des paupières permet de corriger les défauts visibles du tiers supérieur du visage, qui peuvent résulter du vieillissement, d'une malformation congénitale, d'un traumatisme facial ou encore d'un épisode carcinologique. Les options thérapeutiques sont nombreuses et variables, allant des injections de la face à la blépharoplastie chirurgicale. Une consultation spécialisée, avec un interrogatoire minutieux et un examen complet, permet de proposer la solution la plus adaptée à chaque patient.
+              </CardDescription>
             </CardContent>
           </Card>
         </div>
