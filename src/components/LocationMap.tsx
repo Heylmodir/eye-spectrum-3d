@@ -7,14 +7,14 @@ const LocationMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
 
-  // Coordinates for the location: https://maps.app.goo.gl/59rp7sLdMWzCott19
-  const coordinates: [number, number] = [-7.6186, 33.5731]; // Casablanca, Morocco
+  // Coordinates for the location: https://maps.app.goo.gl/sRACGj8onGzdRYm26
+  const coordinates: [number, number] = [-7.589843, 33.567778]; // Casablanca, Morocco
 
   useEffect(() => {
     if (!mapContainer.current) return;
 
     // Initialize map
-    mapboxgl.accessToken = 'pk.eyJ1IjoibG92YWJsZSIsImEiOiJjbTRpN2VoYm4waGcxMmtzNGJreXl2YW8yIn0.QEJgTmh_4XQV_aXqKvD4Tg';
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
     
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
@@ -107,7 +107,7 @@ const LocationMap = () => {
                       Casablanca, Maroc
                     </p>
                     <a
-                      href="https://maps.app.goo.gl/59rp7sLdMWzCott19"
+                      href="https://maps.app.goo.gl/sRACGj8onGzdRYm26"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 mt-3 text-primary hover:text-primary/80 transition-colors text-sm font-semibold"

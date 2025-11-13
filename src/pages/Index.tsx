@@ -6,7 +6,6 @@ import Specialties from "@/components/Specialties";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
-import HoursAndInfo from "@/components/HoursAndInfo";
 import LocationMap from "@/components/LocationMap";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -48,10 +47,6 @@ const Index = () => {
         <section id="contact">
           <Contact />
         </section>
-      </AnimatedSection>
-      
-      <AnimatedSection animation="fade-up" delay={0}>
-        <HoursAndInfo />
       </AnimatedSection>
       
       <AnimatedSection animation="fade-up" delay={0}>
