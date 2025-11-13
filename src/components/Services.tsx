@@ -1,10 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Eye, Scan, Glasses, Activity, Microscope, Shield, Sparkles } from "lucide-react";
 import { OptimizedImage } from "@/components/ui/optimized-image";
-import serviceCataract from "@/assets/service-cataract-real.jpg";
-import serviceLaser from "@/assets/service-laser-real.jpg";
-import serviceRetina from "@/assets/service-retina-real.jpg";
-import serviceGlaucoma from "@/assets/service-glaucoma-real.jpg";
+import serviceCataract from "@/assets/service-cataract-new.jpg";
+import serviceLaser from "@/assets/service-laser-new.jpg";
+import serviceRetina from "@/assets/service-retina-new.jpg";
+import serviceGlaucoma from "@/assets/service-glaucoma-new.jpg";
 import servicePediatric from "@/assets/service-pediatric-real.jpg";
 import serviceLenses from "@/assets/service-lenses-real.jpg";
 
