@@ -101,11 +101,31 @@ const Footer = () => {
               Nos Spécialités
             </h4>
             <ul className="space-y-3">
-              {["Cataracte", "Laser Réfractif", "Rétine", "Glaucome", "Ophtalmologie pédiatrique", "Esthétique"].map((service) => (
-                <li key={service}>
-                  <a href="#services" className="text-muted-foreground hover:text-medical-red transition-all duration-200 hover:translate-x-2 inline-block group">
+              {[
+                { label: "Cataracte", id: "chirurgie-de-la-cataracte" },
+                { label: "Laser Réfractif", id: "chirurgie-refractive-au-laser" },
+                { label: "Rétine", id: "maladies-de-la-retine" },
+                { label: "Glaucome", id: "glaucome" },
+                { label: "Ophtalmologie pédiatrique", id: "ophtalmologie-pediatrique" },
+                { label: "Esthétique", id: "specialties" }
+              ].map((service) => (
+                <li key={service.label}>
+                  <a 
+                    href={`#${service.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const element = document.getElementById(service.id);
+                      if (element) {
+                        const offset = 100;
+                        const elementPosition = element.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - offset;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                      }
+                    }}
+                    className="text-muted-foreground hover:text-medical-red transition-all duration-200 hover:translate-x-2 inline-block group"
+                  >
                     <span className="relative">
-                      {service}
+                      {service.label}
                       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-medical-red group-hover:w-full transition-all duration-300" />
                     </span>
                   </a>

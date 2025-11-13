@@ -49,7 +49,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="relative py-24 bg-gradient-to-br from-muted/30 via-background to-muted/30 overflow-hidden">
+    <section id="services" className="relative py-24 bg-gradient-to-br from-muted/30 via-background to-muted/30 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 right-10 animate-float">
@@ -83,6 +83,7 @@ const Services = () => {
           {services.map((service, index) => (
             <Card
               key={index}
+              id={service.title.toLowerCase().replace(/\s+/g, '-').replace(/é/g, 'e')}
               className="group relative hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 border-transparent hover:border-medical-red/30 bg-card overflow-hidden"
             >
               {/* Gradient overlay on hover */}
