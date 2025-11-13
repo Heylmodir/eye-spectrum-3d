@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Award, Users, Heart, TrendingUp } from "lucide-react";
+import drSurgery1 from "@/assets/dr-kenza-surgery-1.png";
+import drSurgery2 from "@/assets/dr-kenza-surgery-2.png";
 
 const About = () => {
   return (
@@ -68,45 +70,45 @@ const About = () => {
             </Button>
           </div>
 
-          {/* Right content - Visual */}
+          {/* Right content - Professional Images */}
           <div className="relative">
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 via-primary/10 to-transparent p-8 flex items-center justify-center">
-              <div className="w-full h-full rounded-xl bg-card shadow-2xl flex items-center justify-center border border-border/50">
-                <div className="text-center space-y-6 p-8">
-                  <div className="w-32 h-32 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
-                    <Eye className="w-16 h-16 text-primary" />
-                  </div>
-                  <h3 className="text-2xl font-bold">Notre Mission</h3>
-                  <p className="text-muted-foreground">
-                    Préserver et améliorer la vision de nos patients grâce à 
-                    des soins innovants et personnalisés
-                  </p>
+            <div className="grid gap-4">
+              {/* Main image */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
+                <img 
+                  src={drSurgery1} 
+                  alt="Dr Kenza Tazi en chirurgie" 
+                  className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <h3 className="text-2xl font-bold mb-2">Dr Kenza Tazi</h3>
+                  <p className="text-sm opacity-90">Spécialiste en chirurgie oculaire et soins avancés</p>
+                </div>
+              </div>
+              
+              {/* Secondary image */}
+              <div className="relative rounded-2xl overflow-hidden shadow-xl group">
+                <img 
+                  src={drSurgery2} 
+                  alt="Équipement médical moderne" 
+                  className="w-full h-[300px] object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <p className="text-sm font-medium">Technologie de pointe au service de votre vision</p>
                 </div>
               </div>
             </div>
-            <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10" />
-            <div className="absolute -top-8 -left-8 w-48 h-48 bg-accent/10 rounded-full blur-3xl -z-10" />
+            
+            {/* Decorative elements */}
+            <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-medical-red/10 rounded-full blur-3xl -z-10" />
+            <div className="absolute -top-8 -left-8 w-48 h-48 bg-medical-beige/20 rounded-full blur-3xl -z-10" />
           </div>
         </div>
       </div>
     </section>
   );
 };
-
-const Eye = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
-    <circle cx="12" cy="12" r="3" />
-  </svg>
-);
 
 export default About;
