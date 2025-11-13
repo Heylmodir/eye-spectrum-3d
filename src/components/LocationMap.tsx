@@ -1,61 +1,9 @@
-import { useEffect, useRef } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import { MapPin } from 'lucide-react';
 
 const LocationMap = () => {
-  const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<mapboxgl.Map | null>(null);
-
   // Coordinates for Dr Kenza TAZI - Rabat Temara
-  const coordinates: [number, number] = [-6.9001766, 33.9399635];
   const googleMapsUrl = "https://www.google.com/maps/place/Dr+Kenza+TAZI+-+Ophtalmologue+Rabat+Temara+-+Cabinet+d'ophtalmologie+Oulad+Mtaa+-+%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9+%D8%B7%D8%A8+%D9%88%D8%AC%D8%B1%D8%A7%D8%AD%D8%A9+%D8%A7%D9%84%D8%B9%D9%8A%D9%88%D9%86%E2%80%AD/@33.9399635,-6.9001766,17z/data=!4m6!3m5!1s0xda71326e8b0c307:0x95f28dfdaf2365fa!8m2!3d33.9399635!4d-6.9001766!16s%2Fg%2F11wv595spx?entry=ttu&g_ep=EgoyMDI1MTExMC4wIKXMDSoASAFQAw%3D%3D";
-
-  useEffect(() => {
-    if (!mapContainer.current) return;
-
-    // Initialize map
-    mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
-    
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
-      center: coordinates,
-      zoom: 15,
-    });
-
-    // Add navigation controls
-    map.current.addControl(
-      new mapboxgl.NavigationControl(),
-      'top-right'
-    );
-
-    // Create a custom marker element
-    const el = document.createElement('div');
-    el.className = 'custom-marker';
-    el.style.width = '40px';
-    el.style.height = '40px';
-    el.style.backgroundImage = 'url(https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png)';
-    el.style.backgroundSize = 'cover';
-
-    // Add marker
-    new mapboxgl.Marker({
-      color: '#A52A2A', // Burgundy red
-    })
-      .setLngLat(coordinates)
-      .setPopup(
-        new mapboxgl.Popup({ offset: 25 })
-          .setHTML(
-            '<div style="padding: 10px;"><strong style="color: #A52A2A;">Dr Kenza Tazi</strong><br/>Cabinet d\'Ophtalmologie<br/>Rabat Temara</div>'
-          )
-      )
-      .addTo(map.current);
-
-    // Cleanup
-    return () => {
-      map.current?.remove();
-    };
-  }, []);
+  const embedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.1234567890!2d-6.9001766!3d33.9399635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda71326e8b0c307%3A0x95f28dfdaf2365fa!2sDr%20Kenza%20TAZI%20-%20Ophtalmologue%20Rabat%20Temara!5e0!3m2!1sfr!2sma!4v1234567890";
 
   return (
     <section className="py-24 bg-gradient-to-br from-background via-primary/5 to-background">
@@ -87,8 +35,15 @@ const LocationMap = () => {
               <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-medical-red-light z-10 pointer-events-none" />
               <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-medical-red-light z-10 pointer-events-none" />
               
-              {/* Map */}
-              <div ref={mapContainer} className="w-full h-[500px] md:h-[600px]" />
+              {/* Google Maps Embed */}
+              <iframe
+                src={embedUrl}
+                className="w-full h-[500px] md:h-[600px] border-0"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localisation Cabinet Dr Kenza Tazi"
+              />
               
               {/* Google Maps Button Overlay */}
               <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
