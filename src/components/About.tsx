@@ -23,16 +23,16 @@ const About = () => {
             </h2>
 
             <p className="text-lg text-muted-foreground">
-              Avec plus de 15 ans d'expérience, notre cabinet combine expertise 
-              médicale et technologies de pointe pour offrir des soins oculaires 
-              d'exception. Notre équipe de spécialistes est dédiée à préserver 
-              et améliorer votre vision.
+              Notre cabinet moderne allie expertise médicale et équipements de dernière 
+              génération dans un environnement chaleureux et accueillant. Chaque patient 
+              bénéficie d'une attention personnalisée et de soins oculaires de haute qualité, 
+              du diagnostic à la chirurgie.
             </p>
 
             <p className="text-lg text-muted-foreground">
-              Nous utilisons les équipements les plus avancés, incluant l'imagerie 
-              3D et les systèmes de diagnostic assistés par ordinateur, pour garantir 
-              des résultats précis et fiables.
+              Dotés des technologies les plus avancées et d'une décoration soignée, 
+              nos espaces de consultation sont conçus pour votre confort et votre 
+              sérénité, tout en garantissant des examens précis et des résultats fiables.
             </p>
 
             <div className="grid grid-cols-2 gap-6 py-6">
