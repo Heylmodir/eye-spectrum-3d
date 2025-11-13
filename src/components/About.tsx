@@ -64,10 +64,6 @@ const About = () => {
                 </p>
               </div>
             </div>
-
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Découvrir Notre Équipe
-            </Button>
           </div>
 
           {/* Right content - Professional Images - Shows first on mobile */}

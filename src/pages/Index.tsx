@@ -27,11 +27,6 @@ const Index = () => {
         </section>
       </AnimatedSection>
       
-      {/* Testimonials early - social proof when visitors are hot */}
-      <AnimatedSection animation="fade-up" delay={0}>
-        <Testimonials />
-      </AnimatedSection>
-      
       {/* Services - show what you offer */}
       <AnimatedSection animation="fade-up" delay={0}>
         <section id="services">
@@ -44,7 +39,12 @@ const Index = () => {
         <Specialties />
       </AnimatedSection>
       
-      {/* Cabinet photos - final visual reassurance before booking */}
+      {/* Testimonials - social proof */}
+      <AnimatedSection animation="fade-up" delay={0}>
+        <Testimonials />
+      </AnimatedSection>
+      
+      {/* Cabinet photos - visual reassurance */}
       <AnimatedSection animation="fade-up" delay={100}>
         <ImageCarousel />
       </AnimatedSection>

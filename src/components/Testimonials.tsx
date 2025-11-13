@@ -1,4 +1,4 @@
-import { Star, Quote, Eye, Sparkles, Scan, Focus, Camera, Glasses } from "lucide-react";
+import { Star, Quote, Eye, Sparkles, Scan, Focus, Camera, Glasses, Heart, Users, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import AnimatedSection from "./AnimatedSection";
 
@@ -64,17 +64,43 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-background to-muted/30">
-      <div className="container mx-auto px-4">
+    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-background via-medical-red/5 to-background">
+      {/* Animated eye pattern background */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 animate-float">
+          <Eye className="w-24 h-24 text-medical-red" />
+        </div>
+        <div className="absolute bottom-32 right-20 animate-float" style={{ animationDelay: "1s" }}>
+          <Sparkles className="w-20 h-20 text-medical-red" />
+        </div>
+        <div className="absolute top-1/2 left-1/3 animate-float" style={{ animationDelay: "2s" }}>
+          <Eye className="w-28 h-28 text-medical-red" />
+        </div>
+      </div>
+
+      {/* Glowing orbs */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-medical-red/10 rounded-full blur-3xl animate-pulse-soft" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: "1s" }} />
+
+      <div className="container mx-auto px-4 relative z-10">
         <AnimatedSection animation="fade-up" className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Témoignages de nos <span className="text-medical-red">Patients</span>
-          </h2>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-medical-red to-medical-red-dark flex items-center justify-center shadow-lg shadow-medical-red/30">
+              <Quote className="w-6 h-6 text-white" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Témoignages de nos{" "}
+              <span className="bg-gradient-to-r from-medical-red to-primary bg-clip-text text-transparent">
+                Patients
+              </span>
+            </h2>
+          </div>
           <p className="text-xl text-muted-foreground">
             Découvrez les expériences de nos patients et leurs parcours de guérison
           </p>
         </AnimatedSection>
 
+        {/* Testimonials Grid with creative cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <AnimatedSection
@@ -82,36 +108,43 @@ const Testimonials = () => {
               animation="fade-up"
               delay={index * 100}
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 border-border hover:border-medical-red/30 group">
-                <CardContent className="p-6 flex flex-col h-full">
-                  {/* Header with avatar and info */}
-                  <div className="flex items-start gap-4 mb-4">
+              <Card className="relative h-full overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 group border-2 border-transparent hover:border-medical-red/30">
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-medical-red/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Floating glow effect */}
+                <div className="absolute -top-12 -right-12 w-32 h-32 bg-medical-red/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <CardContent className="p-8 flex flex-col h-full relative z-10">
+                  {/* Eye icon avatar */}
+                  <div className="flex items-start gap-4 mb-6">
                     <div className="relative">
                       {(() => {
                         const EyeIcon = eyeIcons[index % eyeIcons.length];
                         return (
-                          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-medical-red to-medical-red-dark flex items-center justify-center text-white border-2 border-medical-red/20 group-hover:border-medical-red/50 transition-all group-hover:scale-110 duration-300">
+                          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-medical-red to-medical-red-dark flex items-center justify-center text-white border-2 border-medical-red/20 group-hover:border-medical-red/50 transition-all group-hover:scale-110 group-hover:rotate-12 duration-500 shadow-lg shadow-medical-red/30">
                             <EyeIcon className="w-8 h-8" />
                           </div>
                         );
                       })()}
-                      <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-medical-red rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Quote className="w-3 h-3 text-white" />
+                      <div className="absolute -bottom-1 -right-1 w-7 h-7 bg-medical-red rounded-full flex items-center justify-center group-hover:scale-125 transition-transform shadow-md">
+                        <Quote className="w-3.5 h-3.5 text-white" />
                       </div>
                     </div>
                     
                     <div className="flex-1">
-                      <h3 className="font-semibold text-lg text-foreground">
+                      <h3 className="font-bold text-lg text-foreground group-hover:text-medical-red transition-colors">
                         {testimonial.name}
                       </h3>
                       <p className="text-sm text-muted-foreground">
                         {testimonial.age} ans {testimonial.parent && "(Parent)"}
                       </p>
-                      <div className="flex gap-0.5 mt-1">
+                      <div className="flex gap-0.5 mt-2">
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <Star
                             key={i}
-                            className="w-4 h-4 fill-medical-red text-medical-red"
+                            className="w-4 h-4 fill-medical-red text-medical-red animate-pulse-soft"
+                            style={{ animationDelay: `${i * 0.1}s` }}
                           />
                         ))}
                       </div>
@@ -119,45 +152,58 @@ const Testimonials = () => {
                   </div>
 
                   {/* Treatment badge */}
-                  <div className="mb-4">
-                    <span className="inline-block px-3 py-1 bg-medical-red/10 text-medical-red rounded-full text-xs font-medium">
+                  <div className="mb-6">
+                    <span className="inline-block px-4 py-2 bg-gradient-to-r from-medical-red/10 to-medical-red/20 text-medical-red rounded-full text-xs font-semibold border border-medical-red/20 group-hover:border-medical-red/40 transition-colors">
                       {testimonial.treatment}
                     </span>
                   </div>
 
-                  {/* Review text */}
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">
-                    "{testimonial.review}"
-                  </p>
+                  {/* Review text with quote marks */}
+                  <div className="relative mb-6 flex-1">
+                    <Quote className="absolute -top-2 -left-2 w-8 h-8 text-medical-red/20" />
+                    <p className="text-muted-foreground text-sm leading-relaxed pl-6 italic">
+                      {testimonial.review}
+                    </p>
+                    <Quote className="absolute -bottom-2 -right-2 w-8 h-8 text-medical-red/20 rotate-180" />
+                  </div>
 
-                  {/* Date */}
-                  <p className="text-xs text-muted-foreground">
-                    {testimonial.date}
-                  </p>
+                  {/* Date with decorative line */}
+                  <div className="flex items-center gap-3 pt-4 border-t border-medical-red/10">
+                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-medical-red/30 to-transparent" />
+                    <p className="text-xs text-muted-foreground font-medium">
+                      {testimonial.date}
+                    </p>
+                    <div className="flex-1 h-px bg-gradient-to-l from-transparent via-medical-red/30 to-transparent" />
+                  </div>
                 </CardContent>
               </Card>
             </AnimatedSection>
           ))}
         </div>
 
-        {/* Stats section */}
-        <AnimatedSection animation="fade-up" delay={200} className="mt-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-medical-red mb-2">98%</div>
-              <div className="text-sm text-muted-foreground">Taux de satisfaction</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-medical-red mb-2">5000+</div>
-              <div className="text-sm text-muted-foreground">Patients traités</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-medical-red mb-2">15+</div>
-              <div className="text-sm text-muted-foreground">Années d&apos;expérience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-medical-red mb-2">4.9/5</div>
-              <div className="text-sm text-muted-foreground">Note moyenne</div>
+        {/* Stats section with creative design */}
+        <AnimatedSection animation="fade-up" delay={200} className="mt-20">
+          <div className="relative">
+            {/* Decorative background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-medical-red/5 via-medical-red/10 to-medical-red/5 rounded-3xl blur-2xl" />
+            
+            <div className="relative grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto p-8 bg-background/50 backdrop-blur-sm rounded-2xl border border-medical-red/20">
+              {[
+                { value: "98%", label: "Taux de satisfaction", icon: Heart },
+                { value: "5000+", label: "Patients traités", icon: Users },
+                { value: "15+", label: "Années d'expérience", icon: Award },
+                { value: "4.9/5", label: "Note moyenne", icon: Star },
+              ].map((stat, idx) => (
+                <div key={idx} className="text-center group cursor-default">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-medical-red to-medical-red-dark flex items-center justify-center shadow-lg shadow-medical-red/30 group-hover:scale-110 transition-transform duration-300">
+                    <stat.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="text-4xl font-bold bg-gradient-to-r from-medical-red to-primary bg-clip-text text-transparent mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </AnimatedSection>
