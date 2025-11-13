@@ -6,7 +6,6 @@ import serviceRetina from "@/assets/service-retina-new.jpg";
 import serviceGlaucoma from "@/assets/service-glaucoma-new.jpg";
 import servicePediatric from "@/assets/service-pediatric-new.jpg";
 import serviceLenses from "@/assets/service-lenses-new.jpg";
-import serviceAesthetic from "@/assets/service-aesthetic.jpg";
 
 const services = [
   {
@@ -44,12 +43,6 @@ const services = [
     title: "Lentilles de contact",
     description: "Nous pratiquons au sein du cabinet l'adaptation des patients en lentilles de contact souples, rigides cornéennes et sclérales, ainsi qu'en lentilles d'orthokératologie. Nous proposons à chaque patient une solution sur mesure et adaptée en fonction de son défaut de vision. Nous expliquons ensuite au patient comment manipuler et entretenir ses lentilles afin d'assurer un port confortable et sécurisé.",
     image: serviceLenses,
-  },
-  {
-    icon: Sparkles,
-    title: "Excellence en Chirurgie Plastique et Reconstructrice",
-    description: "La chirurgie plastique reconstructrice et esthétique de l'orbite et des paupières permet de corriger les défauts visibles du tiers supérieur du visage, qui peuvent résulter du vieillissement, d'une malformation congénitale, d'un traumatisme facial ou encore d'un épisode carcinologique. Les options thérapeutiques sont nombreuses et variables, allant des injections de la face à la blépharoplastie chirurgicale. Une consultation spécialisée, avec un interrogatoire minutieux et un examen complet, permet de proposer la solution la plus adaptée à chaque patient.",
-    image: serviceAesthetic,
   },
 ];
 
