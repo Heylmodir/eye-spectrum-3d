@@ -68,6 +68,7 @@ const Navigation = () => {
               src={logo} 
               alt="Cabinet d'Ophtalmologie Logo" 
               className="h-20 md:h-24 lg:h-28 w-auto object-contain transition-transform group-hover:scale-105 animate-enter"
+              style={{ imageRendering: 'crisp-edges' }}
             />
           </button>
 
@@ -77,8 +78,9 @@ const Navigation = () => {
               <Button
                 key={item.id}
                 variant="ghost"
+                size="sm"
                 onClick={() => handleMenuClick(item)}
-                className="text-foreground hover:text-medical-red hover:bg-medical-red/10 transition-colors"
+                className="text-sm font-medium text-foreground hover:text-medical-red hover:bg-medical-red/10 transition-colors"
               >
                 {item.label}
               </Button>
@@ -91,10 +93,10 @@ const Navigation = () => {
             >
               <Button
                 variant="outline"
-                size="icon"
+                size="sm"
                 className="border-medical-red text-medical-red hover:bg-medical-red hover:text-white transition-colors"
               >
-                <Instagram className="h-5 w-5" />
+                <Instagram className="h-4 w-4" />
               </Button>
             </a>
           </div>
