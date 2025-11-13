@@ -7,8 +7,9 @@ const LocationMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
 
-  // Coordinates for the location: https://maps.app.goo.gl/sRACGj8onGzdRYm26
-  const coordinates: [number, number] = [-7.589843, 33.567778]; // Casablanca, Morocco
+  // Coordinates for Dr Kenza TAZI - Rabat Temara
+  const coordinates: [number, number] = [-6.9001766, 33.9399635];
+  const googleMapsUrl = "https://www.google.com/maps/place/Dr+Kenza+TAZI+-+Ophtalmologue+Rabat+Temara+-+Cabinet+d'ophtalmologie+Oulad+Mtaa+-+%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9+%D8%B7%D8%A8+%D9%88%D8%AC%D8%B1%D8%A7%D8%AD%D8%A9+%D8%A7%D9%84%D8%B9%D9%8A%D9%88%D9%86%E2%80%AD/@33.9399635,-6.9001766,17z/data=!4m6!3m5!1s0xda71326e8b0c307:0x95f28dfdaf2365fa!8m2!3d33.9399635!4d-6.9001766!16s%2Fg%2F11wv595spx?entry=ttu&g_ep=EgoyMDI1MTExMC4wIKXMDSoASAFQAw%3D%3D";
 
   useEffect(() => {
     if (!mapContainer.current) return;
@@ -45,7 +46,7 @@ const LocationMap = () => {
       .setPopup(
         new mapboxgl.Popup({ offset: 25 })
           .setHTML(
-            '<div style="padding: 10px;"><strong style="color: #A52A2A;">Dr Kenza Tazi</strong><br/>Cabinet d\'Ophtalmologie</div>'
+            '<div style="padding: 10px;"><strong style="color: #A52A2A;">Dr Kenza Tazi</strong><br/>Cabinet d\'Ophtalmologie<br/>Rabat Temara</div>'
           )
       )
       .addTo(map.current);
@@ -68,7 +69,7 @@ const LocationMap = () => {
             Trouvez <span className="text-primary">Notre Cabinet</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Situé au cœur de Casablanca, facilement accessible
+            Rabat Temara - Cabinet d'Ophtalmologie Oulad Mtaa
           </p>
         </div>
 
@@ -88,6 +89,31 @@ const LocationMap = () => {
               
               {/* Map */}
               <div ref={mapContainer} className="w-full h-[500px] md:h-[600px]" />
+              
+              {/* Google Maps Button Overlay */}
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+                <a
+                  href={googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/btn relative inline-flex items-center gap-3 px-8 py-4 bg-medical-red text-white rounded-xl font-semibold text-lg shadow-2xl hover:shadow-medical-red/50 transition-all duration-300 hover:scale-105 overflow-hidden"
+                >
+                  {/* Animated background gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-medical-red-light via-medical-red to-medical-red-light bg-[length:200%_100%] animate-[shimmer_3s_linear_infinite] opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                  
+                  {/* Content */}
+                  <div className="relative flex items-center gap-3">
+                    <MapPin className="w-6 h-6" />
+                    <span>Ouvrir dans Google Maps</span>
+                    <svg className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </div>
+                  
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover/btn:opacity-100 blur-xl transition-opacity" />
+                </a>
+              </div>
               
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-medical-red/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
