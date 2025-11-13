@@ -37,7 +37,7 @@ const Specialties = () => {
             </div>
             <CardContent className="p-8 md:p-12 -mt-20 relative z-10">
               <h3 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
-                Excellence en Chirurgie Plastique et Reconstructrice
+                Chirurgie Plastique et Reconstructrice
               </h3>
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed">
