@@ -54,8 +54,9 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error(`Google Sheets webhook failed: ${response.status}`);
     }
 
-    const result = await response.json();
-    console.log('Successfully sent to Google Sheets:', result);
+    // We don't rely on the response body format (it may be HTML or text)
+    const responseText = await response.text();
+    console.log('Google Sheets webhook response:', responseText);
 
     return new Response(
       JSON.stringify({ success: true, message: 'Appointment saved to Google Sheets' }),
