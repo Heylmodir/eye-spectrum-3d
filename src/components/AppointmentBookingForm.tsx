@@ -392,29 +392,18 @@ Merci de me confirmer la disponibilité.`;
               )}
             />
 
-            <div className="grid md:grid-cols-2 gap-4">
-              <Button
-                type="submit"
-                size="lg"
-                disabled={isSubmitting}
-                className="bg-gradient-to-r from-medical-red to-medical-red-dark hover:from-medical-red-dark hover:to-medical-red text-white text-lg py-6 shadow-lg hover:shadow-xl transition-all"
-              >
-                {isSubmitting ? "Envoi en cours..." : "Envoyer la demande"}
-              </Button>
-
-              <Button
-                type="button"
-                size="lg"
-                onClick={handleWhatsAppBooking}
-                className="bg-[#25D366] hover:bg-[#20BA5A] text-white text-lg py-6 shadow-lg hover:shadow-xl transition-all"
-              >
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Réserver via WhatsApp
-              </Button>
-            </div>
+            <Button
+              type="button"
+              size="lg"
+              onClick={handleWhatsAppBooking}
+              className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white text-lg py-6 shadow-lg hover:shadow-xl transition-all"
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Réserver via WhatsApp
+            </Button>
 
             <p className="text-xs text-center text-muted-foreground">
-              Vous pouvez soit envoyer une demande via le formulaire, soit contacter directement le cabinet via WhatsApp
+              Contactez directement le cabinet via WhatsApp pour prendre rendez-vous
             </p>
           </form>
         </Form>
