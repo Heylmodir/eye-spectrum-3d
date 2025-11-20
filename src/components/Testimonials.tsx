@@ -2,31 +2,25 @@ import { Star, Quote, Eye, Sparkles, Heart } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { useEffect, useState } from "react";
-import review11 from "@/assets/review-11.jpg";
-import review12 from "@/assets/review-12.jpg";
-import review13 from "@/assets/review-13.jpg";
-import review14 from "@/assets/review-14.jpg";
-import review15 from "@/assets/review-15.jpg";
-import review16 from "@/assets/review-16.jpg";
-import review17 from "@/assets/review-17.jpg";
-import review18 from "@/assets/review-18.jpg";
-import review19 from "@/assets/review-19.jpg";
-import review20 from "@/assets/review-20.jpg";
+import review1 from "@/assets/review-1.jpg";
+import review2 from "@/assets/review-2.jpg";
+import review3 from "@/assets/review-3.jpg";
+import review4 from "@/assets/review-4.jpg";
+import review5 from "@/assets/review-5.jpg";
+import review6 from "@/assets/review-6.jpg";
+import review7 from "@/assets/review-7.jpg";
+import review8 from "@/assets/review-8.jpg";
 
 const reviewImages = [
-  review11,
-  review12,
-  review13,
-  review14,
-  review15,
-  review16,
-  review17,
-  review18,
-  review19,
-  review20
+  review1,
+  review2,
+  review3,
+  review4,
+  review5,
+  review6,
+  review7,
+  review8
 ];
-
-const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/8qypyVLJouKTCUR59";
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -78,12 +72,7 @@ const Testimonials = () => {
 
         {/* Auto-scrolling carousel */}
         <div className="relative max-w-4xl mx-auto">
-          <a 
-            href={GOOGLE_REVIEWS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block relative h-[500px] overflow-hidden rounded-2xl border-2 border-medical-red/40 shadow-2xl shadow-medical-red/20 hover:border-medical-red/60 transition-all duration-300 cursor-pointer group"
-          >
+          <div className="relative h-[500px] overflow-hidden rounded-2xl border-2 border-medical-red/40 shadow-2xl shadow-medical-red/20">
             {reviewImages.map((image, index) => (
               <div
                 key={index}
@@ -96,11 +85,11 @@ const Testimonials = () => {
                 <OptimizedImage
                   src={image}
                   alt={`Avis Google ${index + 1}`}
-                  className="w-full h-full object-contain bg-white group-hover:scale-[1.02] transition-transform duration-300"
+                  className="w-full h-full object-contain bg-white"
                 />
               </div>
             ))}
-          </a>
+          </div>
 
           {/* Navigation dots */}
           <div className="flex justify-center gap-2 mt-8">

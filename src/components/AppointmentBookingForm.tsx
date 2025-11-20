@@ -32,7 +32,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 
 const services = [
   "Chirurgie de la cataracte",
@@ -119,36 +118,16 @@ const AppointmentBookingForm = () => {
     try {
       // Format the appointment data
       const appointmentData = {
-        firstName: data.firstName,
-        lastName: data.lastName,
-        phone: data.phone,
+        ...data,
         date: format(data.date, "PPP", { locale: fr }),
-        time: data.time,
-        service: data.service,
-        notes: data.notes || "",
       };
 
-      console.log("Sending appointment to Google Sheets:", appointmentData);
-
-      // Send to Google Sheets via edge function
-      const { error } = await supabase.functions.invoke('send-to-google-sheets', {
-        body: appointmentData,
-      });
-
-      if (error) {
-        console.error("Error sending to Google Sheets:", error);
-        throw error;
-      }
-
-      toast({
-        title: "Rendez-vous envoyé!",
-        description: "Votre demande a été enregistrée avec succès.",
-      });
+      // Here you would typically send this to your backend/email service
+      console.log("Appointment booking:", appointmentData);
 
       // Redirect to thank you page
       navigate("/merci");
     } catch (error) {
-      console.error("Error submitting appointment:", error);
       toast({
         title: "Erreur",
         description: "Une erreur est survenue. Veuillez réessayer.",
@@ -392,18 +371,29 @@ Merci de me confirmer la disponibilité.`;
               )}
             />
 
-            <Button
-              type="button"
-              size="lg"
-              onClick={handleWhatsAppBooking}
-              className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white text-lg py-6 shadow-lg hover:shadow-xl transition-all"
-            >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Réserver via WhatsApp
-            </Button>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Button
+                type="submit"
+                size="lg"
+                disabled={isSubmitting}
+                className="bg-gradient-to-r from-medical-red to-medical-red-dark hover:from-medical-red-dark hover:to-medical-red text-white text-lg py-6 shadow-lg hover:shadow-xl transition-all"
+              >
+                {isSubmitting ? "Envoi en cours..." : "Envoyer la demande"}
+              </Button>
+
+              <Button
+                type="button"
+                size="lg"
+                onClick={handleWhatsAppBooking}
+                className="bg-[#25D366] hover:bg-[#20BA5A] text-white text-lg py-6 shadow-lg hover:shadow-xl transition-all"
+              >
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Réserver via WhatsApp
+              </Button>
+            </div>
 
             <p className="text-xs text-center text-muted-foreground">
-              Contactez directement le cabinet via WhatsApp pour prendre rendez-vous
+              Vous pouvez soit envoyer une demande via le formulaire, soit contacter directement le cabinet via WhatsApp
             </p>
           </form>
         </Form>
