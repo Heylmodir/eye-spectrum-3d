@@ -32,6 +32,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const services = [
   "Chirurgie de la cataracte",
@@ -118,16 +119,36 @@ const AppointmentBookingForm = () => {
     try {
       // Format the appointment data
       const appointmentData = {
-        ...data,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        phone: data.phone,
         date: format(data.date, "PPP", { locale: fr }),
+        time: data.time,
+        service: data.service,
+        notes: data.notes || "",
       };
 
-      // Here you would typically send this to your backend/email service
-      console.log("Appointment booking:", appointmentData);
+      console.log("Sending appointment to Google Sheets:", appointmentData);
+
+      // Send to Google Sheets via edge function
+      const { error } = await supabase.functions.invoke('send-to-google-sheets', {
+        body: appointmentData,
+      });
+
+      if (error) {
+        console.error("Error sending to Google Sheets:", error);
+        throw error;
+      }
+
+      toast({
+        title: "Rendez-vous envoyé!",
+        description: "Votre demande a été enregistrée avec succès.",
+      });
 
       // Redirect to thank you page
       navigate("/merci");
     } catch (error) {
+      console.error("Error submitting appointment:", error);
       toast({
         title: "Erreur",
         description: "Une erreur est survenue. Veuillez réessayer.",
