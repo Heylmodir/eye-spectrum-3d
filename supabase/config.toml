@@ -1,1 +1,4 @@
 project_id = "zasbgcnictcmhritzilf"
+
+[functions.submit-appointment]
+verify_jwt = false

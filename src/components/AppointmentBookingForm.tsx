@@ -129,22 +129,25 @@ const AppointmentBookingForm = () => {
         timestamp: new Date().toISOString(),
       };
 
-      // Send to Google Sheets webhook
-      const webhookUrl = import.meta.env.VITE_GOOGLE_SHEETS_WEBHOOK_URL;
-      
-      if (webhookUrl) {
-        try {
-          await fetch(webhookUrl, {
+      // Send to Google Sheets via edge function
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/submit-appointment`,
+          {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
             },
             body: JSON.stringify(appointmentData),
-          });
-        } catch (webhookError) {
-          console.error("Google Sheets webhook error:", webhookError);
-          // Continue even if webhook fails
+          }
+        );
+
+        if (!response.ok) {
+          console.error("Edge function error:", response.status);
         }
+      } catch (webhookError) {
+        console.error("Google Sheets webhook error:", webhookError);
+        // Continue even if webhook fails
       }
 
       toast({
