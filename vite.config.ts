@@ -15,4 +15,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Uncomment and set this ONLY if deploying to username.github.io/repo-name/
+  // Leave commented if using a custom domain or username.github.io (root)
+  // base: '/your-repo-name/',
 }));
