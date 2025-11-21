@@ -117,22 +117,51 @@ const AppointmentBookingForm = () => {
     
     try {
       // Format the appointment data
+      const formattedDate = format(data.date, "PPP", { locale: fr });
       const appointmentData = {
-        ...data,
-        date: format(data.date, "PPP", { locale: fr }),
+        firstName: data.firstName,
+        lastName: data.lastName,
+        phone: data.phone,
+        date: formattedDate,
+        time: data.time,
+        service: data.service,
+        notes: data.notes || "",
+        timestamp: new Date().toISOString(),
       };
 
-      // Here you would typically send this to your backend/email service
-      console.log("Appointment booking:", appointmentData);
+      // Send to Google Sheets webhook
+      const webhookUrl = import.meta.env.VITE_GOOGLE_SHEETS_WEBHOOK_URL;
+      
+      if (webhookUrl) {
+        try {
+          await fetch(webhookUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(appointmentData),
+          });
+        } catch (webhookError) {
+          console.error("Google Sheets webhook error:", webhookError);
+          // Continue even if webhook fails
+        }
+      }
+
+      toast({
+        title: "Rendez-vous demandé",
+        description: "Nous vous contactons bientôt pour confirmer votre rendez-vous.",
+      });
 
       // Redirect to thank you page
       navigate("/merci");
     } catch (error) {
+      console.error("Form submission error:", error);
       toast({
         title: "Erreur",
         description: "Une erreur est survenue. Veuillez réessayer.",
         variant: "destructive",
       });
+    } finally {
       setIsSubmitting(false);
     }
   };
