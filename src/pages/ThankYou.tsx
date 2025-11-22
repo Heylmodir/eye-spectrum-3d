@@ -4,12 +4,23 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Home, MessageCircle } from "lucide-react";
 
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 const ThankYou = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     // Add SEO meta tags
     document.title = "Merci - Dr Kenza Tazi";
+    
+    // Track conversion
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {'send_to': 'AW-16835728221/N0CmCJWkkZ4aEN2m89s-'});
+    }
   }, []);
 
   const handleWhatsAppClick = () => {
